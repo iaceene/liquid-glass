@@ -1,0 +1,1243 @@
+[16:45:48.807] [INFO] Storybook upgrade - v10.6.9
+[16:45:48.813] [INFO] detect-projects-spinner-start: Detecting projects...
+[16:45:48.817] [DEBUG] Finding Storybook projects...
+[16:45:48.902] [DEBUG] Found 1 Storybook projects
+[16:45:48.904] [INFO] detect-projects-spinner: Detecting projects: 1 projects
+[16:45:48.905] [DEBUG] Getting Storybook data...
+[16:45:48.905] [DEBUG] Getting Storybook info...
+[16:45:48.913] [DEBUG] Getting stories paths...
+[16:45:48.943] [DEBUG] Getting package manager...
+[16:45:49.034] [DEBUG] Getting package.json info for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:49.034] [DEBUG] Getting Storybook version...
+[16:45:49.035] [DEBUG] Detecting CSF factory usage...
+[16:45:49.077] [DEBUG] /.storybook - Validating before version... 8.6.19
+[16:45:49.077] [DEBUG] /.storybook - Validating upgrade compatibility...
+[16:45:49.078] [DEBUG] /.storybook - Fetching NPM version information...
+[16:45:49.079] [DEBUG] Getting CLI versions from NPM for storybook...
+[16:45:49.079] [DEBUG] Executing command: npm info storybook version
+[16:45:49.089] [DEBUG] Getting CLI versions from NPM for storybook@next...
+[16:45:49.089] [DEBUG] Executing command: npm info storybook@next version
+[16:45:50.487] [DEBUG] /.storybook - Evaluating blockers...
+[16:45:50.491] [DEBUG] Getting installed version for @storybook/experimental-addon-test...
+[16:45:50.491] [DEBUG] Executing command: npm ls --json --depth=99
+[16:45:51.256] [DEBUG] Executing command: npm ls --json --depth=0
+[16:45:51.825] [DEBUG] No installations found for @storybook/experimental-addon-test
+[16:45:51.825] [INFO] detect-projects-spinner-stop: 1 project detected
+[16:45:51.827] [DEBUG] Found 1 valid projects and 0 error projects
+[16:45:51.827] [INFO] Upgrading from [1m8.6.19[22m to [1m10.6.9[22m
+[16:45:51.829] [INFO] upgrade-dependencies-task-start: Fetching versions to update package.json files..
+[16:45:51.829] [DEBUG] Updating dependencies in /.storybook...
+[16:45:51.829] [INFO] upgrade-dependencies-task: /package.json
+[16:45:51.830] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:51.830] [DEBUG] {
+  "upgradedDependencies": []
+}
+[16:45:51.830] [DEBUG] {
+  "upgradedDevDependencies": [
+    "@storybook/react@^10.6.9",
+    "@storybook/react-vite@^10.6.9",
+    "storybook@^10.6.9"
+  ]
+}
+[16:45:51.830] [DEBUG] {
+  "upgradedPeerDependencies": []
+}
+[16:45:51.830] [DEBUG] Getting package.json info for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:51.830] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:51.831] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:51.831] [DEBUG] Getting package.json info for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:51.831] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:51.831] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:51.831] [DEBUG] Getting package.json info for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:51.831] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:51.831] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:51.832] [INFO] upgrade-dependencies-task-success: Updated package versions in package.json files
+[16:45:51.833] [INFO] detect-automigrations-task-start: Detecting automigrations...
+[16:45:51.833] [DEBUG] Starting automigration collection across 1 projects and 27 fixes...
+[16:45:51.834] [INFO] detect-automigrations-task: Checking automigrations for /.storybook...
+[16:45:51.834] [DEBUG] Processing project: /.storybook
+[16:45:51.834] [DEBUG] Checking fix eslintPlugin for project /.storybook...
+[16:45:51.834] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:51.834] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:51.835] [DEBUG] Checking fix addon-mdx-gfm-remove for project /.storybook...
+[16:45:51.835] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:51.835] [DEBUG] Checking fix addon-storysource-code-panel for project /.storybook...
+[16:45:51.835] [DEBUG] Checking fix upgrade-storybook-related-dependencies for project /.storybook...
+[16:45:51.835] [DEBUG] Checking for incompatible storybook packages...
+[16:45:51.835] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:51.841] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:51.841] [DEBUG] Getting installed version for @storybook/addon-essentials...
+[16:45:51.841] [DEBUG] Getting installed version for @storybook/addon-interactions...
+[16:45:51.841] [DEBUG] Getting installed version for @storybook/blocks...
+[16:45:51.841] [DEBUG] Executing command: npm ls --json --depth=99
+[16:45:51.846] [DEBUG] Executing command: npm ls --json --depth=99
+[16:45:51.849] [DEBUG] Executing command: npm ls --json --depth=99
+[16:45:52.595] [DEBUG] Executing command: npm ls --json --depth=0
+[16:45:52.616] [DEBUG] Executing command: npm ls --json --depth=0
+[16:45:52.632] [DEBUG] Executing command: npm ls --json --depth=0
+[16:45:53.140] [DEBUG] An issue occurred while trying to find dependencies metadata using npm: SB_CLI_0003 (ExecaCommandFailedError): Command failed: npm ls --json --depth=0
+
+Command failed with exit code 1: npm ls --json '--depth=0'
+{
+  "version": "0.1.0",
+  "name": "@liquid-glass/ui",
+  "problems": [
+    "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite",
+    "invalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react",
+    "invalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook"
+  ],
+  "dependencies": {
+    "@changesets/cli": {
+      "version": "2.31.1",
+      "overridden": false
+    },
+    "@playwright/test": {
+      "version": "1.65.1",
+      "overridden": false
+    },
+    "@storybook/addon-essentials": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/addon-interactions": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/blocks": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/react-vite": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite"
+      ]
+    },
+    "@storybook/react": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react"
+      ]
+    },
+    "@testing-library/jest-dom": {
+      "version": "6.9.1",
+      "overridden": false
+    },
+    "@testing-library/react": {
+      "version": "16.3.3",
+      "overridden": false
+    },
+    "@testing-library/user-event": {
+      "version": "14.6.13",
+      "overridden": false
+    },
+    "@types/node": {
+      "version": "22.20.7",
+      "overridden": false
+    },
+    "@types/react-dom": {
+      "version": "18.3.7",
+      "overridden": false
+    },
+    "@types/react": {
+      "version": "18.3.32",
+      "overridden": false
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "version": "8.74.0",
+      "overridden": false
+    },
+    "@typescript-eslint/parser": {
+      "version": "8.74.0",
+      "overridden": false
+    },
+    "@vitejs/plugin-react": {
+      "version": "4.7.0",
+      "overridden": false
+    },
+    "ajv": {
+      "version": "8.20.0",
+      "overridden": false
+    },
+    "autoprefixer": {
+      "version": "10.7.0",
+      "overridden": false
+    },
+    "class-variance-authority": {
+      "version": "0.7.1",
+      "overridden": false
+    },
+    "clsx": {
+      "version": "2.1.1",
+      "overridden": false
+    },
+    "eslint-plugin-react-hooks": {
+      "version": "5.2.0",
+      "overridden": false
+    },
+    "eslint-plugin-react": {
+      "version": "7.37.5",
+      "overridden": false
+    },
+    "eslint": {
+      "version": "8.57.1",
+      "overridden": false
+    },
+    "jsdom": {
+      "version": "25.0.1",
+      "overridden": false
+    },
+    "lucide-react": {
+      "version": "0.460.0",
+      "overridden": false
+    },
+    "postcss": {
+      "version": "8.5.33",
+      "overridden": false
+    },
+    "react-dom": {
+      "version": "18.3.1",
+      "overridden": false
+    },
+    "react": {
+      "version": "18.3.1",
+      "overridden": false
+    },
+    "storybook": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook"
+      ]
+    },
+    "tailwind-merge": {
+      "version": "2.6.2",
+      "overridden": false
+    },
+    "tailwindcss": {
+      "version": "3.4.19",
+      "overridden": false
+    },
+    "typescript": {
+      "version": "5.9.3",
+      "overridden": false
+    },
+    "vite-plugin-dts": {
+      "version": "4.5.4",
+      "overridden": false
+    },
+    "vite": {
+      "version": "5.4.21",
+      "overridden": false
+    },
+    "vitest": {
+      "version": "2.1.9",
+      "overridden": false
+    }
+  },
+  "error": {
+    "code": "ELSPROBLEMS",
+    "summary": "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite\ninvalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react\ninvalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook",
+    "detail": ""
+  }
+}
+Command failed with exit code 1: npm ls --json '--depth=0'
+
+{
+  "version": "0.1.0",
+  "name": "@liquid-glass/ui",
+  "problems": [
+    "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite",
+    "invalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react",
+    "invalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook"
+  ],
+  "dependencies": {
+    "@changesets/cli": {
+      "version": "2.31.1",
+      "overridden": false
+    },
+    "@playwright/test": {
+      "version": "1.65.1",
+      "overridden": false
+    },
+    "@storybook/addon-essentials": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/addon-interactions": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/blocks": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/react-vite": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite"
+      ]
+    },
+    "@storybook/react": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react"
+      ]
+    },
+    "@testing-library/jest-dom": {
+      "version": "6.9.1",
+      "overridden": false
+    },
+    "@testing-library/react": {
+      "version": "16.3.3",
+      "overridden": false
+    },
+    "@testing-library/user-event": {
+      "version": "14.6.13",
+      "overridden": false
+    },
+    "@types/node": {
+      "version": "22.20.7",
+      "overridden": false
+    },
+    "@types/react-dom": {
+      "version": "18.3.7",
+      "overridden": false
+    },
+    "@types/react": {
+      "version": "18.3.32",
+      "overridden": false
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "version": "8.74.0",
+      "overridden": false
+    },
+    "@typescript-eslint/parser": {
+      "version": "8.74.0",
+      "overridden": false
+    },
+    "@vitejs/plugin-react": {
+      "version": "4.7.0",
+      "overridden": false
+    },
+    "ajv": {
+      "version": "8.20.0",
+      "overridden": false
+    },
+    "autoprefixer": {
+      "version": "10.7.0",
+      "overridden": false
+    },
+    "class-variance-authority": {
+      "version": "0.7.1",
+      "overridden": false
+    },
+    "clsx": {
+      "version": "2.1.1",
+      "overridden": false
+    },
+    "eslint-plugin-react-hooks": {
+      "version": "5.2.0",
+      "overridden": false
+    },
+    "eslint-plugin-react": {
+      "version": "7.37.5",
+      "overridden": false
+    },
+    "eslint": {
+      "version": "8.57.1",
+      "overridden": false
+    },
+    "jsdom": {
+      "version": "25.0.1",
+      "overridden": false
+    },
+    "lucide-react": {
+      "version": "0.460.0",
+      "overridden": false
+    },
+    "postcss": {
+      "version": "8.5.33",
+      "overridden": false
+    },
+    "react-dom": {
+      "version": "18.3.1",
+      "overridden": false
+    },
+    "react": {
+      "version": "18.3.1",
+      "overridden": false
+    },
+    "storybook": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook"
+      ]
+    },
+    "tailwind-merge": {
+      "version": "2.6.2",
+      "overridden": false
+    },
+    "tailwindcss": {
+      "version": "3.4.19",
+      "overridden": false
+    },
+    "typescript": {
+      "version": "5.9.3",
+      "overridden": false
+    },
+    "vite-plugin-dts": {
+      "version": "4.5.4",
+      "overridden": false
+    },
+    "vite": {
+      "version": "5.4.21",
+      "overridden": false
+    },
+    "vitest": {
+      "version": "2.1.9",
+      "overridden": false
+    }
+  },
+  "error": {
+    "code": "ELSPROBLEMS",
+    "summary": "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite\ninvalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react\ninvalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook",
+    "detail": ""
+  }
+}
+[16:45:53.140] [DEBUG] No installations found for @storybook/blocks
+[16:45:53.140] [DEBUG] Getting CLI versions from NPM for @storybook/blocks...
+[16:45:53.140] [DEBUG] Executing command: npm info @storybook/blocks version
+[16:45:53.170] [DEBUG] An issue occurred while trying to find dependencies metadata using npm: SB_CLI_0003 (ExecaCommandFailedError): Command failed: npm ls --json --depth=0
+
+Command failed with exit code 1: npm ls --json '--depth=0'
+{
+  "version": "0.1.0",
+  "name": "@liquid-glass/ui",
+  "problems": [
+    "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite",
+    "invalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react",
+    "invalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook"
+  ],
+  "dependencies": {
+    "@changesets/cli": {
+      "version": "2.31.1",
+      "overridden": false
+    },
+    "@playwright/test": {
+      "version": "1.65.1",
+      "overridden": false
+    },
+    "@storybook/addon-essentials": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/addon-interactions": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/blocks": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/react-vite": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite"
+      ]
+    },
+    "@storybook/react": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react"
+      ]
+    },
+    "@testing-library/jest-dom": {
+      "version": "6.9.1",
+      "overridden": false
+    },
+    "@testing-library/react": {
+      "version": "16.3.3",
+      "overridden": false
+    },
+    "@testing-library/user-event": {
+      "version": "14.6.13",
+      "overridden": false
+    },
+    "@types/node": {
+      "version": "22.20.7",
+      "overridden": false
+    },
+    "@types/react-dom": {
+      "version": "18.3.7",
+      "overridden": false
+    },
+    "@types/react": {
+      "version": "18.3.32",
+      "overridden": false
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "version": "8.74.0",
+      "overridden": false
+    },
+    "@typescript-eslint/parser": {
+      "version": "8.74.0",
+      "overridden": false
+    },
+    "@vitejs/plugin-react": {
+      "version": "4.7.0",
+      "overridden": false
+    },
+    "ajv": {
+      "version": "8.20.0",
+      "overridden": false
+    },
+    "autoprefixer": {
+      "version": "10.7.0",
+      "overridden": false
+    },
+    "class-variance-authority": {
+      "version": "0.7.1",
+      "overridden": false
+    },
+    "clsx": {
+      "version": "2.1.1",
+      "overridden": false
+    },
+    "eslint-plugin-react-hooks": {
+      "version": "5.2.0",
+      "overridden": false
+    },
+    "eslint-plugin-react": {
+      "version": "7.37.5",
+      "overridden": false
+    },
+    "eslint": {
+      "version": "8.57.1",
+      "overridden": false
+    },
+    "jsdom": {
+      "version": "25.0.1",
+      "overridden": false
+    },
+    "lucide-react": {
+      "version": "0.460.0",
+      "overridden": false
+    },
+    "postcss": {
+      "version": "8.5.33",
+      "overridden": false
+    },
+    "react-dom": {
+      "version": "18.3.1",
+      "overridden": false
+    },
+    "react": {
+      "version": "18.3.1",
+      "overridden": false
+    },
+    "storybook": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook"
+      ]
+    },
+    "tailwind-merge": {
+      "version": "2.6.2",
+      "overridden": false
+    },
+    "tailwindcss": {
+      "version": "3.4.19",
+      "overridden": false
+    },
+    "typescript": {
+      "version": "5.9.3",
+      "overridden": false
+    },
+    "vite-plugin-dts": {
+      "version": "4.5.4",
+      "overridden": false
+    },
+    "vite": {
+      "version": "5.4.21",
+      "overridden": false
+    },
+    "vitest": {
+      "version": "2.1.9",
+      "overridden": false
+    }
+  },
+  "error": {
+    "code": "ELSPROBLEMS",
+    "summary": "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite\ninvalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react\ninvalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook",
+    "detail": ""
+  }
+}
+Command failed with exit code 1: npm ls --json '--depth=0'
+
+{
+  "version": "0.1.0",
+  "name": "@liquid-glass/ui",
+  "problems": [
+    "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite",
+    "invalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react",
+    "invalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook"
+  ],
+  "dependencies": {
+    "@changesets/cli": {
+      "version": "2.31.1",
+      "overridden": false
+    },
+    "@playwright/test": {
+      "version": "1.65.1",
+      "overridden": false
+    },
+    "@storybook/addon-essentials": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/addon-interactions": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/blocks": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/react-vite": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite"
+      ]
+    },
+    "@storybook/react": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react"
+      ]
+    },
+    "@testing-library/jest-dom": {
+      "version": "6.9.1",
+      "overridden": false
+    },
+    "@testing-library/react": {
+      "version": "16.3.3",
+      "overridden": false
+    },
+    "@testing-library/user-event": {
+      "version": "14.6.13",
+      "overridden": false
+    },
+    "@types/node": {
+      "version": "22.20.7",
+      "overridden": false
+    },
+    "@types/react-dom": {
+      "version": "18.3.7",
+      "overridden": false
+    },
+    "@types/react": {
+      "version": "18.3.32",
+      "overridden": false
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "version": "8.74.0",
+      "overridden": false
+    },
+    "@typescript-eslint/parser": {
+      "version": "8.74.0",
+      "overridden": false
+    },
+    "@vitejs/plugin-react": {
+      "version": "4.7.0",
+      "overridden": false
+    },
+    "ajv": {
+      "version": "8.20.0",
+      "overridden": false
+    },
+    "autoprefixer": {
+      "version": "10.7.0",
+      "overridden": false
+    },
+    "class-variance-authority": {
+      "version": "0.7.1",
+      "overridden": false
+    },
+    "clsx": {
+      "version": "2.1.1",
+      "overridden": false
+    },
+    "eslint-plugin-react-hooks": {
+      "version": "5.2.0",
+      "overridden": false
+    },
+    "eslint-plugin-react": {
+      "version": "7.37.5",
+      "overridden": false
+    },
+    "eslint": {
+      "version": "8.57.1",
+      "overridden": false
+    },
+    "jsdom": {
+      "version": "25.0.1",
+      "overridden": false
+    },
+    "lucide-react": {
+      "version": "0.460.0",
+      "overridden": false
+    },
+    "postcss": {
+      "version": "8.5.33",
+      "overridden": false
+    },
+    "react-dom": {
+      "version": "18.3.1",
+      "overridden": false
+    },
+    "react": {
+      "version": "18.3.1",
+      "overridden": false
+    },
+    "storybook": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook"
+      ]
+    },
+    "tailwind-merge": {
+      "version": "2.6.2",
+      "overridden": false
+    },
+    "tailwindcss": {
+      "version": "3.4.19",
+      "overridden": false
+    },
+    "typescript": {
+      "version": "5.9.3",
+      "overridden": false
+    },
+    "vite-plugin-dts": {
+      "version": "4.5.4",
+      "overridden": false
+    },
+    "vite": {
+      "version": "5.4.21",
+      "overridden": false
+    },
+    "vitest": {
+      "version": "2.1.9",
+      "overridden": false
+    }
+  },
+  "error": {
+    "code": "ELSPROBLEMS",
+    "summary": "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite\ninvalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react\ninvalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook",
+    "detail": ""
+  }
+}
+[16:45:53.171] [DEBUG] No installations found for @storybook/addon-essentials
+[16:45:53.171] [DEBUG] Getting CLI versions from NPM for @storybook/addon-essentials...
+[16:45:53.171] [DEBUG] Executing command: npm info @storybook/addon-essentials version
+[16:45:53.189] [DEBUG] An issue occurred while trying to find dependencies metadata using npm: SB_CLI_0003 (ExecaCommandFailedError): Command failed: npm ls --json --depth=0
+
+Command failed with exit code 1: npm ls --json '--depth=0'
+{
+  "version": "0.1.0",
+  "name": "@liquid-glass/ui",
+  "problems": [
+    "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite",
+    "invalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react",
+    "invalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook"
+  ],
+  "dependencies": {
+    "@changesets/cli": {
+      "version": "2.31.1",
+      "overridden": false
+    },
+    "@playwright/test": {
+      "version": "1.65.1",
+      "overridden": false
+    },
+    "@storybook/addon-essentials": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/addon-interactions": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/blocks": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/react-vite": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite"
+      ]
+    },
+    "@storybook/react": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react"
+      ]
+    },
+    "@testing-library/jest-dom": {
+      "version": "6.9.1",
+      "overridden": false
+    },
+    "@testing-library/react": {
+      "version": "16.3.3",
+      "overridden": false
+    },
+    "@testing-library/user-event": {
+      "version": "14.6.13",
+      "overridden": false
+    },
+    "@types/node": {
+      "version": "22.20.7",
+      "overridden": false
+    },
+    "@types/react-dom": {
+      "version": "18.3.7",
+      "overridden": false
+    },
+    "@types/react": {
+      "version": "18.3.32",
+      "overridden": false
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "version": "8.74.0",
+      "overridden": false
+    },
+    "@typescript-eslint/parser": {
+      "version": "8.74.0",
+      "overridden": false
+    },
+    "@vitejs/plugin-react": {
+      "version": "4.7.0",
+      "overridden": false
+    },
+    "ajv": {
+      "version": "8.20.0",
+      "overridden": false
+    },
+    "autoprefixer": {
+      "version": "10.7.0",
+      "overridden": false
+    },
+    "class-variance-authority": {
+      "version": "0.7.1",
+      "overridden": false
+    },
+    "clsx": {
+      "version": "2.1.1",
+      "overridden": false
+    },
+    "eslint-plugin-react-hooks": {
+      "version": "5.2.0",
+      "overridden": false
+    },
+    "eslint-plugin-react": {
+      "version": "7.37.5",
+      "overridden": false
+    },
+    "eslint": {
+      "version": "8.57.1",
+      "overridden": false
+    },
+    "jsdom": {
+      "version": "25.0.1",
+      "overridden": false
+    },
+    "lucide-react": {
+      "version": "0.460.0",
+      "overridden": false
+    },
+    "postcss": {
+      "version": "8.5.33",
+      "overridden": false
+    },
+    "react-dom": {
+      "version": "18.3.1",
+      "overridden": false
+    },
+    "react": {
+      "version": "18.3.1",
+      "overridden": false
+    },
+    "storybook": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook"
+      ]
+    },
+    "tailwind-merge": {
+      "version": "2.6.2",
+      "overridden": false
+    },
+    "tailwindcss": {
+      "version": "3.4.19",
+      "overridden": false
+    },
+    "typescript": {
+      "version": "5.9.3",
+      "overridden": false
+    },
+    "vite-plugin-dts": {
+      "version": "4.5.4",
+      "overridden": false
+    },
+    "vite": {
+      "version": "5.4.21",
+      "overridden": false
+    },
+    "vitest": {
+      "version": "2.1.9",
+      "overridden": false
+    }
+  },
+  "error": {
+    "code": "ELSPROBLEMS",
+    "summary": "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite\ninvalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react\ninvalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook",
+    "detail": ""
+  }
+}
+Command failed with exit code 1: npm ls --json '--depth=0'
+
+{
+  "version": "0.1.0",
+  "name": "@liquid-glass/ui",
+  "problems": [
+    "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite",
+    "invalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react",
+    "invalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook"
+  ],
+  "dependencies": {
+    "@changesets/cli": {
+      "version": "2.31.1",
+      "overridden": false
+    },
+    "@playwright/test": {
+      "version": "1.65.1",
+      "overridden": false
+    },
+    "@storybook/addon-essentials": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/addon-interactions": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/blocks": {
+      "version": "8.6.14",
+      "overridden": false
+    },
+    "@storybook/react-vite": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite"
+      ]
+    },
+    "@storybook/react": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react"
+      ]
+    },
+    "@testing-library/jest-dom": {
+      "version": "6.9.1",
+      "overridden": false
+    },
+    "@testing-library/react": {
+      "version": "16.3.3",
+      "overridden": false
+    },
+    "@testing-library/user-event": {
+      "version": "14.6.13",
+      "overridden": false
+    },
+    "@types/node": {
+      "version": "22.20.7",
+      "overridden": false
+    },
+    "@types/react-dom": {
+      "version": "18.3.7",
+      "overridden": false
+    },
+    "@types/react": {
+      "version": "18.3.32",
+      "overridden": false
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "version": "8.74.0",
+      "overridden": false
+    },
+    "@typescript-eslint/parser": {
+      "version": "8.74.0",
+      "overridden": false
+    },
+    "@vitejs/plugin-react": {
+      "version": "4.7.0",
+      "overridden": false
+    },
+    "ajv": {
+      "version": "8.20.0",
+      "overridden": false
+    },
+    "autoprefixer": {
+      "version": "10.7.0",
+      "overridden": false
+    },
+    "class-variance-authority": {
+      "version": "0.7.1",
+      "overridden": false
+    },
+    "clsx": {
+      "version": "2.1.1",
+      "overridden": false
+    },
+    "eslint-plugin-react-hooks": {
+      "version": "5.2.0",
+      "overridden": false
+    },
+    "eslint-plugin-react": {
+      "version": "7.37.5",
+      "overridden": false
+    },
+    "eslint": {
+      "version": "8.57.1",
+      "overridden": false
+    },
+    "jsdom": {
+      "version": "25.0.1",
+      "overridden": false
+    },
+    "lucide-react": {
+      "version": "0.460.0",
+      "overridden": false
+    },
+    "postcss": {
+      "version": "8.5.33",
+      "overridden": false
+    },
+    "react-dom": {
+      "version": "18.3.1",
+      "overridden": false
+    },
+    "react": {
+      "version": "18.3.1",
+      "overridden": false
+    },
+    "storybook": {
+      "version": "8.6.19",
+      "overridden": false,
+      "invalid": "\"^10.6.9\" from the root project",
+      "problems": [
+        "invalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook"
+      ]
+    },
+    "tailwind-merge": {
+      "version": "2.6.2",
+      "overridden": false
+    },
+    "tailwindcss": {
+      "version": "3.4.19",
+      "overridden": false
+    },
+    "typescript": {
+      "version": "5.9.3",
+      "overridden": false
+    },
+    "vite-plugin-dts": {
+      "version": "4.5.4",
+      "overridden": false
+    },
+    "vite": {
+      "version": "5.4.21",
+      "overridden": false
+    },
+    "vitest": {
+      "version": "2.1.9",
+      "overridden": false
+    }
+  },
+  "error": {
+    "code": "ELSPROBLEMS",
+    "summary": "invalid: @storybook/react-vite@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react-vite\ninvalid: @storybook/react@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/@storybook/react\ninvalid: storybook@8.6.19 /home/iaceene/Desktop/liquid-glass/node_modules/storybook",
+    "detail": ""
+  }
+}
+[16:45:53.189] [DEBUG] No installations found for @storybook/addon-interactions
+[16:45:53.189] [DEBUG] Getting CLI versions from NPM for @storybook/addon-interactions...
+[16:45:53.189] [DEBUG] Executing command: npm info @storybook/addon-interactions version
+[16:45:54.358] [DEBUG] Checking fix initial-globals for project /.storybook...
+[16:45:54.367] [DEBUG] Checking fix addon-globals-api for project /.storybook...
+[16:45:54.376] [DEBUG] Checking fix addon-a11y-addon-test for project /.storybook...
+[16:45:54.376] [DEBUG] Checking fix consolidated-imports for project /.storybook...
+[16:45:54.377] [DEBUG] Checking fix addon-experimental-test for project /.storybook...
+[16:45:54.378] [DEBUG] Using cached installed version for @storybook/experimental-addon-test...
+[16:45:54.378] [DEBUG] Checking fix rnstorybook-config for project /.storybook...
+[16:45:54.378] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:54.378] [DEBUG] Checking fix rn-ondevice-addons-to-device-addons for project /.storybook...
+[16:45:54.378] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:54.378] [DEBUG] Checking fix migrate-addon-console for project /.storybook...
+[16:45:54.378] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:54.378] [DEBUG] Checking fix nextjs-to-nextjs-vite for project /.storybook...
+[16:45:54.378] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:54.378] [DEBUG] Checking fix angular-to-angular-vite for project /.storybook...
+[16:45:54.379] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:54.379] [DEBUG] Checking fix angular-vite-remove-compodoc for project /.storybook...
+[16:45:54.379] [DEBUG] Checking fix react-vite-to-tanstack-react for project /.storybook...
+[16:45:54.379] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:54.379] [DEBUG] Checking fix remove-addon-interactions for project /.storybook...
+[16:45:54.379] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:54.379] [DEBUG] Checking fix addon-mcp for project /.storybook...
+[16:45:54.379] [DEBUG] Checking fix renderer-to-framework for project /.storybook...
+[16:45:54.379] [DEBUG] Checking fix remove-essential-addons for project /.storybook...
+[16:45:54.380] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:54.380] [DEBUG] Checking fix addon-a11y-parameters for project /.storybook...
+[16:45:54.380] [DEBUG] Checking fix remove-docs-autodocs for project /.storybook...
+[16:45:54.385] [DEBUG] Checking fix wrap-getAbsolutePath for project /.storybook...
+[16:45:54.389] [DEBUG] Checking fix fix-faux-esm-require for project /.storybook...
+[16:45:54.390] [DEBUG] Checking fix storybookPackageNameConflict for project /.storybook...
+[16:45:54.390] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:54.390] [DEBUG] Checking fix enable-experimental-review for project /.storybook...
+[16:45:54.390] [DEBUG] Checking fix enable-experimental-docgen-server for project /.storybook...
+[16:45:54.391] [INFO] detect-automigrations-task: 
+Automigrations detected:
+[16:45:54.393] [INFO] detect-automigrations-task: [32m[32m✔[32m eslintPlugin[39m
+[16:45:54.393] [INFO] detect-automigrations-task: [32m[32m✔[32m addon-globals-api[39m
+[16:45:54.393] [INFO] detect-automigrations-task: [32m[32m✔[32m consolidated-imports[39m
+[16:45:54.393] [INFO] detect-automigrations-task: [32m[32m✔[32m remove-addon-interactions[39m
+[16:45:54.395] [INFO] detect-automigrations-task: [32m[32m✔[32m renderer-to-framework[39m
+[16:45:54.396] [INFO] detect-automigrations-task: [32m[32m✔[32m remove-essential-addons[39m
+[16:45:54.396] [INFO] detect-automigrations-task: [32m[32m✔[32m remove-docs-autodocs[39m
+[16:45:54.396] [INFO] detect-automigrations-task: [32m[32m✔[32m fix-faux-esm-require[39m
+[16:45:54.396] [INFO] detect-automigrations-task: [32m[32m✔[32m enable-experimental-review[39m
+[16:45:54.397] [INFO] detect-automigrations-task: [32m[32m✔[32m enable-experimental-docgen-server[39m
+[16:45:54.397] [INFO] detect-automigrations-task-success: 10 automigration(s) detected
+[16:45:56.798] [PROMPT] Select automigrations to run {"choice":["eslintPlugin","addon-globals-api","consolidated-imports","remove-addon-interactions","renderer-to-framework","remove-essential-addons","remove-docs-autodocs","fix-faux-esm-require"]}
+[16:45:56.800] [INFO] automigrate-/.storybook-task-start: Running automigrations for /.storybook
+[16:45:56.800] [DEBUG] Adding dependencies: eslint-plugin-storybook@10.6.9
+[16:45:56.800] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:56.800] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:56.820] [INFO] automigrate-/.storybook-task: [32m[32m✔[32m eslintPlugin[39m
+[16:45:57.032] [INFO] automigrate-/.storybook-task: [32m[32m✔[32m addon-globals-api[39m
+[16:45:57.046] [INFO] automigrate-/.storybook-task: [32m[32m✔[32m consolidated-imports[39m
+[16:45:57.049] [DEBUG] Uninstalling @storybook/addon-interactions
+[16:45:57.049] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:57.049] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:57.050] [DEBUG] Removing '@storybook/addon-interactions' from main.js addons field.
+[16:45:57.052] [INFO] automigrate-/.storybook-task: [32m[32m✔[32m remove-addon-interactions[39m
+[16:45:57.052] [DEBUG] 
+Migrating @storybook/react to @storybook/react-vite
+[16:45:57.055] [DEBUG] Updating package.json files...
+[16:45:57.056] [INFO] automigrate-/.storybook-task: [32m[32m✔[32m renderer-to-framework[39m
+[16:45:57.061] [DEBUG] Uninstalling @storybook/addon-essentials
+[16:45:57.061] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:57.061] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:57.062] [DEBUG] Removing '@storybook/addon-essentials' from main.js addons field.
+[16:45:57.070] [DEBUG] Getting Storybook info...
+[16:45:57.073] [DEBUG] Getting stories paths...
+[16:45:57.073] [DEBUG] Getting package manager...
+[16:45:57.078] [DEBUG] Getting package.json info for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:57.078] [DEBUG] Getting Storybook version...
+[16:45:57.078] [DEBUG] Detecting CSF factory usage...
+[16:45:57.090] [INFO] Verifying @storybook/addon-docs
+[16:45:57.091] [DEBUG] Getting dependency version for storybook...
+[16:45:57.091] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:57.091] [INFO] Installing @storybook/addon-docs@^10.6.9
+[16:45:57.091] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:57.091] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:57.092] [INFO] Adding '@storybook/addon-docs' to the "addons" field in /home/iaceene/Desktop/liquid-glass/.storybook/main.ts
+[16:45:57.105] [INFO] automigrate-/.storybook-task: [32m[32m✔[32m remove-essential-addons[39m
+[16:45:57.106] [INFO] automigrate-/.storybook-task: 🔄 Updating [36mdocs[39m parameter in main config file...
+[16:45:57.113] [INFO] automigrate-/.storybook-task: [32m[32m✔[32m remove-docs-autodocs[39m
+[16:45:57.124] [INFO] automigrate-/.storybook-task: [32m[32m✔[32m fix-faux-esm-require[39m
+[16:45:57.124] [INFO] automigrate-/.storybook-task-success: Completed automigrations for /.storybook
+[16:45:57.126] [INFO] Installing dependencies...
+[16:45:57.126] [INFO] install-dependencies-spinner-start: Installing dependencies...
+[16:45:57.127] [DEBUG] Executing command: bun install
+[16:45:57.134] [INFO] Installing dependencies...: bun install v1.4.4 (38afee6c8)
+
+[16:45:57.134] [INFO] install-dependencies-spinner: Installing dependencies...: bun install v1.4.4 (38afe
+[16:45:58.056] [INFO] Installing dependencies...: 
++ @storybook/addon-docs@10.6.9
++ @storybook/react@10.6.9
++ @storybook/react-vite@10.6.9
++ eslint-plugin-storybook@10.6.9
++ storybook@10.6.9
+
+55 packages installed [925.00ms]
+Removed: 2
+
+[16:45:58.056] [INFO] install-dependencies-spinner: Installing dependencies...: + @storybook/addon-docs@1
+[16:45:58.063] [INFO] Dependencies installed
+[16:45:58.063] [INFO] install-dependencies-spinner-stop: Dependencies installed
+[16:45:58.065] [INFO] Checking the health of your project(s)..
+[16:45:58.067] [DEBUG] Using cached package.json for /home/iaceene/Desktop/liquid-glass/package.json...
+[16:45:58.068] [DEBUG] Executing command: npm ls --json --depth=99
+[16:45:58.815] [DEBUG] Executing command: npm ls --json --depth=0
+[16:45:59.290] [WARN] /.storybook: 1 issue found
+[16:45:59.290] [INFO] You are currently using Storybook [1m10.6.9[22m but you have packages which are incompatible with it:
+
+- @storybook/blocks@8.6.14 which depends on ^8.6.14
+ Repo: https://github.com/storybookjs/storybook/tree/next/code/lib/blocks
+
+Please consider updating your packages or contacting the maintainers for compatibility details.
+
+For more details on compatibility guidance, see:
+https://github.com/storybookjs/storybook/issues/32836
+[16:45:59.291] [INFO] Storybook doctor is complete!
+[16:45:59.291] [INFO] You can always recheck the health of your project(s) by running:
+[36mnpx storybook doctor[39m
+[16:45:59.294] [INFO] [33mYour project(s) have been upgraded successfully, but some issues were found which need your attention, please check Storybook doctor logs above.[39m
+[16:45:59.296] [INFO] If you want to learn more about the automigrations that executed in your project(s), please check the following links:
+• ]8;;https://storybook.js.org/docs/configure/integration/eslint-plugineslintPlugin]8;;
+• ]8;;https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#viewportbackgrounds-addon-synchronized-configuration-and-globals-usageaddon-globals-api]8;;
+• ]8;;https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#dropped-support-for-legacy-packagesconsolidated-imports]8;;
+• ]8;;https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#essentials-addon-viewport-controls-interactions-and-actions-moved-to-coreremove-addon-interactions]8;;
+• ]8;;https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#moving-from-renderer-based-to-framework-based-configurationrenderer-to-framework]8;;
+• ]8;;https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#essentials-addon-viewport-controls-interactions-and-actions-moved-to-coreremove-essential-addons]8;;
+• ]8;;https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#mainjs-docsautodocs-is-deprecatedremove-docs-autodocs]8;;
+• ]8;;https://storybook.js.org/docs/faq#how-do-i-fix-module-resolution-in-special-environmentsfix-faux-esm-require]8;;
+[16:45:59.297] [INFO] For a full list of changes, please check our migration guide: [36mhttps://storybook.js.org/docs/releases/migration-guide?ref=upgrade[39m
+[16:45:59.298] [INFO] Storybook collects completely anonymous usage telemetry. We use it to shape Storybook's roadmap and prioritize features. You can learn more, including how to opt out, at https://storybook.js.org/telemetry
+[16:46:00.818] [INFO] Storybook upgrade completed!
