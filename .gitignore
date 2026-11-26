@@ -34,3 +34,5 @@ bun.lock*
 *.njsproj
 *.sln
 *.sw?
+.agents/
+debug-storybook.log
