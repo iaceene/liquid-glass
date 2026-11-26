@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { LiquidAvatar } from './liquid-avatar';
 
 const meta: Meta<typeof LiquidAvatar> = {
-  title: 'Components/LiquidAvatar',
+  title: 'Data Display/LiquidAvatar',
   component: LiquidAvatar,
   tags: ['autodocs'],
   argTypes: {

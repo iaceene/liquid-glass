@@ -153,5 +153,5 @@ export function LiquidTooltip({
   )
 }
 
-export { LiquidTooltip as Tooltip }
+export { LiquidTooltip as Tooltip, LiquidTooltip as Component }
 export default LiquidTooltip

@@ -182,5 +182,6 @@ export {
   LiquidAlert as Alert,
   LiquidAlertTitle as AlertTitle,
   LiquidAlertDescription as AlertDescription,
+  LiquidAlert as Component,
 }
 export default LiquidAlert

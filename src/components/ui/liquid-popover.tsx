@@ -295,5 +295,6 @@ export {
   LiquidPopoverTrigger as PopoverTrigger,
   LiquidPopoverContent as PopoverContent,
   LiquidPopoverClose as PopoverClose,
+  LiquidPopover as Component,
 }
 export default LiquidPopover

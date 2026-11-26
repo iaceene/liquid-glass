@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { LiquidSeparator } from './liquid-separator';
 
 const meta: Meta<typeof LiquidSeparator> = {
-  title: 'Components/LiquidSeparator',
+  title: 'Data Display/LiquidSeparator',
   component: LiquidSeparator,
   tags: ['autodocs'],
   argTypes: {

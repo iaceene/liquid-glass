@@ -13,6 +13,7 @@
  */
 
 import * as React from "react"
+import { useLiquidContext } from "./liquid/provider"
 
 export type LiquidButtonVariant =
   | "default"
@@ -330,8 +331,8 @@ export const LiquidButton = React.forwardRef<HTMLButtonElement, LiquidButtonProp
       variant = "default",
       size = "default",
       shape = "pill",
-      tone = "light",
-      sound = true,
+      tone: propTone,
+      sound: propSound,
       disableRipple = false,
       disableWater = false,
       loading = false,
@@ -355,6 +356,9 @@ export const LiquidButton = React.forwardRef<HTMLButtonElement, LiquidButtonProp
     const canvasRef = React.useRef<HTMLCanvasElement | null>(null)
     const audioRef = React.useRef<AudioContext | null>(null)
     const [gl, setGl] = React.useState(true)
+    const liquidCtx = useLiquidContext()
+    const tone = propTone ?? (liquidCtx.tone === "dark" || liquidCtx.tone === "midnight" ? "dark" : "light")
+    const sound = propSound ?? liquidCtx.sound
 
     React.useImperativeHandle(forwardedRef, () => btnRef.current as HTMLButtonElement)
 
@@ -674,6 +678,20 @@ export const LiquidButton = React.forwardRef<HTMLButtonElement, LiquidButtonProp
 )
 
 LiquidButton.displayName = "LiquidButton"
+
+export type LiquidCheckoutButtonProps = Omit<LiquidButtonProps, "variant"> & {
+  variant?: "checkout" | "pay"
+}
+
+export const LiquidCheckoutButton = React.forwardRef<HTMLButtonElement, LiquidCheckoutButtonProps>(
+  function LiquidCheckoutButton({ variant = "checkout", shape = "pill", size = "lg", ...props }, ref) {
+    return <LiquidButton ref={ref} variant={variant} shape={shape} size={size} {...props} />
+  }
+)
+
+LiquidCheckoutButton.displayName = "LiquidCheckoutButton"
+
+export { LiquidCheckoutButton as CheckoutButton }
 
 /** alias for registries that import { Component } */
 export { LiquidButton as Component }

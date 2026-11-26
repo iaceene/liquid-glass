@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { LiquidLabel } from './liquid-label';
 
 const meta: Meta<typeof LiquidLabel> = {
-  title: 'Components/LiquidLabel',
+  title: 'Forms & Inputs/LiquidLabel',
   component: LiquidLabel,
   tags: ['autodocs'],
   argTypes: {

@@ -12,6 +12,7 @@
  */
 
 import * as React from "react"
+import { useLiquidContext } from "./liquid/provider"
 
 export type LiquidInputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> & {
   /** Field label */
@@ -281,12 +282,12 @@ export const LiquidInput = React.forwardRef<LiquidInputHandle, LiquidInputProps>
       label,
       helperText,
       error,
-      tone = "light",
+      tone: propTone,
       size = "default",
       icon,
       rightIcon,
       clearable = false,
-      sound = false,
+      sound: propSound,
       disableWater = false,
       id,
       type = "text",
@@ -310,6 +311,9 @@ export const LiquidInput = React.forwardRef<LiquidInputHandle, LiquidInputProps>
   ) => {
     const generatedId = React.useId()
     const inputId = id || generatedId
+    const liquidCtx = useLiquidContext()
+    const tone = propTone ?? (liquidCtx.tone === "dark" || liquidCtx.tone === "midnight" ? "dark" : "light")
+    const sound = propSound ?? liquidCtx.sound
     const isPassword = type === "password"
     const [showPassword, setShowPassword] = React.useState(false)
     const [focused, setFocused] = React.useState(false)

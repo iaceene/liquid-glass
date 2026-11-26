@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { LiquidCheckbox } from "./liquid-checkbox"
 
 const meta: Meta<typeof LiquidCheckbox> = {
-  title: "Components/LiquidCheckbox",
+  title: 'Forms & Inputs/LiquidCheckbox',
   component: LiquidCheckbox,
   parameters: {
     layout: "centered",

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { LiquidInput, NimbusInputIcons } from './liquid-input';
 
 const meta: Meta<typeof LiquidInput> = {
-  title: 'Components/LiquidInput',
+  title: 'Forms & Inputs/LiquidInput',
   component: LiquidInput,
   tags: ['autodocs'],
   argTypes: {

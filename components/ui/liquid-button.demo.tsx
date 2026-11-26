@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { LiquidButton, NimbusButtonIcons } from "@/components/ui/liquid-button"
+import { LiquidButton, LiquidCheckoutButton, NimbusButtonIcons } from "@/components/ui/liquid-button"
 
 export default function ButtonDemo() {
   const [loading, setLoading] = React.useState(false)
@@ -33,23 +33,14 @@ export default function ButtonDemo() {
       }}
     >
       <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-        <button
-          type="button"
+        <LiquidButton
+          size="sm"
+          variant="glass"
+          tone={tone}
           onClick={() => setTone((t) => (t === "light" ? "dark" : "light"))}
-          style={{
-            padding: "6px 14px",
-            borderRadius: 999,
-            border: "1px solid rgba(11,19,43,.15)",
-            background: "rgba(255,255,255,.2)",
-            backdropFilter: "blur(8px)",
-            cursor: "pointer",
-            fontSize: 12,
-            fontWeight: 500,
-            color: tone === "light" ? "#0B132B" : "#F1F7FF",
-          }}
         >
           Toggle Tone: {tone}
-        </button>
+        </LiquidButton>
       </div>
 
       <div style={{ display: "flex", flexWrap: "wrap", gap: 16, justifyContent: "center", alignItems: "center", maxWidth: 640 }}>
@@ -60,6 +51,16 @@ export default function ButtonDemo() {
         <LiquidButton tone={tone} variant="glass" icon={NimbusButtonIcons.sparkle}>
           Glass Pill
         </LiquidButton>
+
+        <LiquidCheckoutButton
+          tone={tone}
+          loading={loading}
+          loadingText="Authorizing"
+          success={success}
+          onClick={handlePay}
+        >
+          Checkout Pay
+        </LiquidCheckoutButton>
 
         <LiquidButton tone={tone} variant="secondary">
           Secondary

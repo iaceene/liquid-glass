@@ -869,5 +869,6 @@ export {
   LiquidTabsList as TabsList,
   LiquidTabsTrigger as TabsTrigger,
   LiquidTabsContent as TabsContent,
+  LiquidTabs as Component,
 }
 export default LiquidTabs

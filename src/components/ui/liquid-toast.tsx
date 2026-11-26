@@ -385,5 +385,6 @@ export function LiquidToast({
 export {
   LiquidToast as Toast,
   LiquidToaster as Toaster,
+  LiquidToast as Component,
 }
 export default LiquidToast

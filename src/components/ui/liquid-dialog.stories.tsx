@@ -12,7 +12,7 @@ import {
 import { LiquidButton } from "./liquid-button"
 
 const meta: Meta<typeof LiquidDialog> = {
-  title: "Components/LiquidDialog",
+  title: 'Overlays/LiquidDialog',
   component: LiquidDialog,
   parameters: {
     layout: "centered",

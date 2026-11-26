@@ -8,7 +8,7 @@ import {
 } from "./liquid-tabs"
 
 const meta: Meta<typeof LiquidTabs> = {
-  title: "Components/LiquidTabs",
+  title: 'Navigation/LiquidTabs',
   component: LiquidTabs,
   parameters: {
     layout: "centered",

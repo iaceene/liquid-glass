@@ -3,7 +3,7 @@ import { LiquidTooltip } from "./liquid-tooltip"
 import { LiquidButton } from "./liquid-button"
 
 const meta: Meta<typeof LiquidTooltip> = {
-  title: "Components/LiquidTooltip",
+  title: 'Overlays/LiquidTooltip',
   component: LiquidTooltip,
   parameters: {
     layout: "centered",

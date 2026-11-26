@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { LiquidToggle, NimbusToggleIcons } from './liquid-toggle';
 
 const meta: Meta<typeof LiquidToggle> = {
-  title: 'Components/LiquidToggle',
+  title: 'Forms & Inputs/LiquidToggle',
   component: LiquidToggle,
   tags: ['autodocs'],
   argTypes: {
@@ -61,6 +61,12 @@ export const Default: Story = {
 };
 
 export const WithSunMoonIcons: Story = {
+  args: {
+    size: 58,
+    disabled: true,
+    sound: true
+  },
+
   render: () => (
     <div className="p-10 rounded-3xl bg-gradient-to-tr from-sky-100 via-white to-blue-100 flex flex-col items-center gap-4">
       <div className="text-sm font-medium text-slate-700">Day / Night Liquid Mode</div>
@@ -71,7 +77,7 @@ export const WithSunMoonIcons: Story = {
         label="Theme toggle"
       />
     </div>
-  ),
+  )
 };
 
 export const DarkTone: Story = {

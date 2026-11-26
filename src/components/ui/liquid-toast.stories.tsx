@@ -3,7 +3,7 @@ import { LiquidToast, LiquidToaster, toast, type ToastTone } from "./liquid-toas
 import { LiquidButton } from "./liquid-button"
 
 const meta: Meta<typeof LiquidToast> = {
-  title: "Components/LiquidToast",
+  title: 'Feedback/LiquidToast',
   component: LiquidToast,
   parameters: {
     layout: "centered",

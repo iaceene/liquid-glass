@@ -12,10 +12,12 @@ Frosted glass surfaces with physical backdrop blur, real-time WebGL water shader
 
 | Category | Components |
 |---|---|
-| **Interaction & Overlays** | `LiquidDialog`, `LiquidDropdownMenu`, `LiquidTooltip`, `LiquidPopover`, `LiquidTabs`, `LiquidAccordion`, `LiquidToast` (`Toaster`, `toast()`), `LiquidAlert` |
-| **Inputs & Forms** | `LiquidButton`, `LiquidInput`, `LiquidTextarea`, `LiquidCheckbox`, `LiquidSwitch` (`LiquidToggle`), `LiquidLabel` |
-| **Authentication & Flows** | `LiquidAuth` (`AuthCard`, Unified Sign In & Sign Up + OAuth), `LiquidCheckout` (`WaterCard`) |
-| **Data & Display** | `LiquidCard`, `LiquidBadge`, `LiquidAvatar`, `LiquidSeparator`, `LiquidSkeleton`, `LiquidNavbar` |
+| **Forms & Inputs** | `LiquidButton`, `LiquidInput`, `LiquidTextarea`, `LiquidCheckbox`, `LiquidSwitch` (`LiquidToggle`), `LiquidLabel`, `LiquidForm` |
+| **Navigation** | `LiquidNavbar`, `LiquidTabs` |
+| **Feedback & Status** | `LiquidToast` (`Toaster`, `toast()`), `LiquidAlert` |
+| **Overlays & Dialogs** | `LiquidDialog`, `LiquidDropdownMenu`, `LiquidTooltip`, `LiquidPopover` |
+| **Data Display** | `LiquidCard`, `LiquidAccordion`, `LiquidBadge`, `LiquidAvatar`, `LiquidSeparator`, `LiquidSkeleton` |
+| **Application Flows** | `LiquidAuth` (`AuthCard`, Unified Sign In & Sign Up + OAuth), `LiquidCheckout` (`WaterCard`) |
 
 ---
 

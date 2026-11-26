@@ -3,7 +3,7 @@ import * as React from 'react';
 import { LiquidButton, NimbusButtonIcons } from './liquid-button';
 
 const meta: Meta<typeof LiquidButton> = {
-  title: 'Components/LiquidButton',
+  title: 'Forms & Inputs/LiquidButton',
   component: LiquidButton,
   tags: ['autodocs'],
   argTypes: {
@@ -81,6 +81,9 @@ export const AllVariants: Story = {
         <LiquidButton variant="glass" icon={NimbusButtonIcons.sparkle}>
           Glass Crystal
         </LiquidButton>
+        <LiquidButton variant="checkout">
+          Checkout
+        </LiquidButton>
         <LiquidButton variant="secondary">
           Secondary
         </LiquidButton>
@@ -107,6 +110,9 @@ export const DarkTone: Story = {
         </LiquidButton>
         <LiquidButton tone="dark" variant="glass" icon={NimbusButtonIcons.sparkle}>
           Dark Glass
+        </LiquidButton>
+        <LiquidButton tone="dark" variant="checkout">
+          Dark Checkout
         </LiquidButton>
         <LiquidButton tone="dark" variant="secondary">
           Dark Secondary

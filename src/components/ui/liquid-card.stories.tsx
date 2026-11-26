@@ -10,7 +10,7 @@ import {
 import { LiquidButton } from './liquid-button';
 
 const meta: Meta<typeof LiquidCard> = {
-  title: 'Components/LiquidCard',
+  title: 'Data Display/LiquidCard',
   component: LiquidCard,
   tags: ['autodocs'],
   argTypes: {

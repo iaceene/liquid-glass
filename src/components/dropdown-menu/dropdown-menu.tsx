@@ -1,1 +1,21 @@
-export * from "../ui/liquid-dropdown-menu"
+export {
+  LiquidDropdownMenu,
+  LiquidDropdownMenuTrigger,
+  LiquidDropdownMenuContent,
+  LiquidDropdownMenuItem,
+  LiquidDropdownMenuSeparator,
+  LiquidDropdownMenuLabel,
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuLabel,
+  type LiquidDropdownMenuProps,
+  type LiquidDropdownMenuTriggerProps,
+  type LiquidDropdownMenuContentProps,
+  type LiquidDropdownMenuItemProps,
+  type LiquidDropdownMenuSeparatorProps,
+  type LiquidDropdownMenuLabelProps,
+} from "../ui/liquid-dropdown-menu";
+export { LiquidDropdownMenu as default } from "../ui/liquid-dropdown-menu";

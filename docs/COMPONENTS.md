@@ -7,29 +7,38 @@ frosted glass surfaces with real backdrop blur, WebGL-powered water shaders, spr
 
 ## Component Index
 
-### Core & Form Controls (Phase 1)
-- [LiquidButton](#liquidbutton) (`Button`)
+### 1. Forms & Inputs
+- [LiquidButton](#liquidbutton) (`Button`, `LiquidCheckoutButton`, `CheckoutButton`)
 - [LiquidInput](#liquidinput) (`Input`)
 - [LiquidLabel](#liquidlabel) (`Label`)
 - [LiquidTextarea](#liquidtextarea) (`Textarea`)
-- [LiquidCard](#liquidcard) (`Card`)
-- [LiquidBadge](#liquidbadge) (`Badge`)
-- [LiquidAvatar](#liquidavatar) (`Avatar`)
-- [LiquidSeparator](#liquidseparator) (`Separator`)
-- [LiquidSkeleton](#liquidskeleton) (`Skeleton`)
 - [LiquidToggle](#liquidtoggle) / [LiquidSwitch](#liquidswitch) (`Switch`)
+- [LiquidCheckbox](#liquidcheckbox) (`Checkbox`)
+- [LiquidForm](#liquidform) (`Form`)
 
-### Interaction, Navigation & Feedback (Phase 2)
+### 2. Navigation
 - [LiquidNavbar](#liquidnavbar) (`Navbar`)
 - [LiquidTabs](#liquidtabs) (`Tabs`)
+
+### 3. Feedback & Status
+- [LiquidToast & Toaster](#liquidtoast--liquidtoaster) (`Toast`, `Toaster`, `toast()`, `useToast()`)
+- [LiquidAlert](#liquidalert) (`Alert`)
+
+### 4. Overlays & Dialogs
 - [LiquidDialog](#liquiddialog) (`Dialog`)
 - [LiquidDropdownMenu](#liquiddropdownmenu) (`DropdownMenu`)
 - [LiquidTooltip](#liquidtooltip) (`Tooltip`)
 - [LiquidPopover](#liquidpopover) (`Popover`)
+
+### 5. Data Display
+- [LiquidCard](#liquidcard) (`Card`)
 - [LiquidAccordion](#liquidaccordion) (`Accordion`)
-- [LiquidToast & Toaster](#liquidtoast--liquidtoaster) (`Toast`, `Toaster`, `toast()`, `useToast()`)
-- [LiquidAlert](#liquidalert) (`Alert`)
-- [LiquidCheckbox](#liquidcheckbox) (`Checkbox`)
+- [LiquidBadge](#liquidbadge) (`Badge`)
+- [LiquidAvatar](#liquidavatar) (`Avatar`)
+- [LiquidSeparator](#liquidseparator) (`Separator`)
+- [LiquidSkeleton](#liquidskeleton) (`Skeleton`)
+
+### 6. Application Flows
 - [LiquidAuth](#liquidauth) (`AuthCard`, Sign In & Sign Up)
 - [LiquidCheckout](#liquidcheckout) (`Checkout`, `WaterCard`)
 
@@ -319,6 +328,32 @@ import { LiquidCheckbox } from "@liquid-glass/ui"
   defaultChecked
   sound
   onCheckedChange={(checked) => console.log("Checked:", checked)}
+/>
+```
+
+---
+
+### LiquidForm
+A unified glass form panel embedded with responsive WebGL water. As the user tabs or clicks between fields, an active fluid drop glides seamlessly across inputs, stretching and pinching droplets on long hops. Includes live error shaking, progress submit with liquid water fill, checkmark completion, and synthesized droplet audio.
+
+```tsx
+import { LiquidForm, type LiquidFormFieldConfig } from "@liquid-glass/ui"
+
+const fields: LiquidFormFieldConfig[] = [
+  { name: "name", label: "Full Name", placeholder: "Alex Rivera", required: true, colSpan: 1 },
+  { name: "email", label: "Email Address", type: "email", placeholder: "alex@example.com", required: true, colSpan: 1 },
+  { name: "message", label: "Message", type: "textarea", placeholder: "Tell us about your project...", required: true, colSpan: 2 },
+]
+
+<LiquidForm
+  title="Get in Touch"
+  description="Send us a message through the liquid glass basin."
+  fields={fields}
+  tone="light"
+  sound
+  onSubmit={async (values) => {
+    await fetch("/api/contact", { method: "POST", body: JSON.stringify(values) })
+  }}
 />
 ```
 

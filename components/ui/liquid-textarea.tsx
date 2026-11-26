@@ -12,6 +12,7 @@
  */
 
 import * as React from "react"
+import { useLiquidContext } from "./liquid/provider"
 
 export type LiquidTextareaProps = Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, "size"> & {
   /** Field label */
@@ -241,9 +242,9 @@ export const LiquidTextarea = React.forwardRef<LiquidTextareaHandle, LiquidTexta
       label,
       helperText,
       error,
-      tone = "light",
+      tone: propTone,
       size = "default",
-      sound = false,
+      sound: propSound,
       showCount = false,
       maxLength,
       id,
@@ -267,6 +268,9 @@ export const LiquidTextarea = React.forwardRef<LiquidTextareaHandle, LiquidTexta
   ) => {
     const generatedId = React.useId()
     const textareaId = id || generatedId
+    const liquidCtx = useLiquidContext()
+    const tone = propTone ?? (liquidCtx.tone === "dark" || liquidCtx.tone === "midnight" ? "dark" : "light")
+    const sound = propSound ?? liquidCtx.sound
     const [focused, setFocused] = React.useState(false)
     const [shaking, setShaking] = React.useState(false)
     const [innerValue, setInnerValue] = React.useState(defaultValue || "")

@@ -1,1 +1,27 @@
-export * from "../ui/liquid-dialog"
+export {
+  LiquidDialog,
+  LiquidDialogTrigger,
+  LiquidDialogContent,
+  LiquidDialogHeader,
+  LiquidDialogTitle,
+  LiquidDialogDescription,
+  LiquidDialogFooter,
+  LiquidDialogClose,
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+  DialogClose,
+  type LiquidDialogProps,
+  type LiquidDialogTriggerProps,
+  type LiquidDialogContentProps,
+  type LiquidDialogHeaderProps,
+  type LiquidDialogTitleProps,
+  type LiquidDialogDescriptionProps,
+  type LiquidDialogFooterProps,
+  type LiquidDialogCloseProps,
+} from "../ui/liquid-dialog";
+export { LiquidDialog as default } from "../ui/liquid-dialog";

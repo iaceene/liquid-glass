@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { LiquidTextarea } from './liquid-textarea';
 
 const meta: Meta<typeof LiquidTextarea> = {
-  title: 'Components/LiquidTextarea',
+  title: 'Forms & Inputs/LiquidTextarea',
   component: LiquidTextarea,
   tags: ['autodocs'],
   argTypes: {

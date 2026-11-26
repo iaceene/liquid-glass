@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { LiquidAlert, LiquidAlertTitle, LiquidAlertDescription } from "./liquid-alert"
 
 const meta: Meta<typeof LiquidAlert> = {
-  title: "Components/LiquidAlert",
+  title: 'Feedback/LiquidAlert',
   component: LiquidAlert,
   parameters: {
     layout: "centered",

@@ -10,7 +10,7 @@ import {
 import { LiquidButton } from "./liquid-button"
 
 const meta: Meta<typeof LiquidDropdownMenu> = {
-  title: "Components/LiquidDropdownMenu",
+  title: 'Overlays/LiquidDropdownMenu',
   component: LiquidDropdownMenu,
   parameters: {
     layout: "centered",

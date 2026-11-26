@@ -21,7 +21,7 @@ const FAQ_ITEMS = [
 ];
 
 const meta: Meta<typeof LiquidAccordion> = {
-  title: 'Components/LiquidAccordion',
+  title: 'Data Display/LiquidAccordion',
   component: LiquidAccordion,
   tags: ['autodocs'],
   argTypes: {

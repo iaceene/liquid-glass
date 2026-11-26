@@ -194,5 +194,5 @@ export const LiquidCheckbox = React.forwardRef<HTMLButtonElement, LiquidCheckbox
   )
 })
 
-export { LiquidCheckbox as Checkbox }
+export { LiquidCheckbox as Checkbox, LiquidCheckbox as Component }
 export default LiquidCheckbox

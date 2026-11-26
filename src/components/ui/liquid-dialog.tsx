@@ -349,5 +349,6 @@ export {
   LiquidDialogDescription as DialogDescription,
   LiquidDialogFooter as DialogFooter,
   LiquidDialogClose as DialogClose,
+  LiquidDialog as Component,
 }
 export default LiquidDialog

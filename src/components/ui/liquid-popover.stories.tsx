@@ -8,7 +8,7 @@ import {
 import { LiquidButton } from "./liquid-button"
 
 const meta: Meta<typeof LiquidPopover> = {
-  title: "Components/LiquidPopover",
+  title: 'Overlays/LiquidPopover',
   component: LiquidPopover,
   parameters: {
     layout: "centered",

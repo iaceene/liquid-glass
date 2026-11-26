@@ -12,6 +12,7 @@
  */
 
 import * as React from "react"
+import { useLiquidContext } from "./liquid/provider"
 
 export type LiquidToggleProps = {
   checked?: boolean
@@ -212,11 +213,11 @@ export function LiquidToggle({
   checked,
   defaultChecked = false,
   onCheckedChange,
-  tone = "light",
+  tone: propTone,
   size = 40,
   icons,
   disabled = false,
-  sound = false,
+  sound: propSound,
   label = "Toggle",
   name,
   value = "on",
@@ -224,6 +225,9 @@ export function LiquidToggle({
   className,
   style,
 }: LiquidToggleProps) {
+  const liquidCtx = useLiquidContext()
+  const tone = propTone ?? (liquidCtx.tone === "dark" || liquidCtx.tone === "midnight" ? "dark" : "light")
+  const sound = propSound ?? liquidCtx.sound
   const [inner, setInner] = React.useState(defaultChecked)
   const current = checked ?? inner
   const [, bump] = React.useReducer((n: number) => n + 1, 0)

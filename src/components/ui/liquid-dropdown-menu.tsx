@@ -390,5 +390,6 @@ export {
   LiquidDropdownMenuItem as DropdownMenuItem,
   LiquidDropdownMenuSeparator as DropdownMenuSeparator,
   LiquidDropdownMenuLabel as DropdownMenuLabel,
+  LiquidDropdownMenu as Component,
 }
 export default LiquidDropdownMenu

@@ -493,19 +493,54 @@ const LA_CSS = `
 .la-title{font-size:20px;font-weight:650;letter-spacing:-.02em;margin:0;line-height:1.2}
 .la-sub{font-size:13px;font-weight:480;color:var(--p-soft);margin:0}
 
-/* Mode Tabs */
-.la-tabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:3px;margin-bottom:18px;border-radius:14px;
-  background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px var(--p-line)}
-.nimbus-auth[data-tone="dark"] .la-tabs{background:rgba(255,255,255,.04)}
-.la-tab{all:unset;padding:8px 12px;border-radius:11px;font-size:13px;font-weight:600;color:var(--p-soft);
-  text-align:center;cursor:pointer;transition:color .2s,background .2s;user-select:none}
-.la-tab[data-active="true"]{color:var(--p-fg);background:rgba(255,255,255,.2);box-shadow:0 1px 3px rgba(0,0,0,.08)}
-.nimbus-auth[data-tone="dark"] .la-tab[data-active="true"]{background:rgba(255,255,255,.09)}
+/* Mode Tabs - Tidepool Segmented Switcher */
+.la-tabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:3.5px;margin-bottom:18px;border-radius:15px;
+  background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px var(--p-line)}
+.nimbus-auth[data-tone="dark"] .la-tabs,.nimbus-auth[data-tone="midnight"] .la-tabs{background:rgba(255,255,255,.03)}
+.la-tab{all:unset;padding:8px 12px;border-radius:12px;font-size:13px;font-weight:600;color:var(--p-soft);
+  text-align:center;cursor:pointer;transition:color .25s,background .25s,box-shadow .25s,transform .2s;user-select:none}
+.la-tab:hover{color:var(--p-fg)}
+.la-tab[data-active="true"]{color:var(--p-fg);background:rgba(255,255,255,.22);
+  box-shadow:inset 0 1px 1px var(--p-rim),0 2px 6px rgba(0,40,90,.08);font-weight:650}
+.nimbus-auth[data-tone="dark"] .la-tab[data-active="true"],.nimbus-auth[data-tone="midnight"] .la-tab[data-active="true"]{
+  background:rgba(255,255,255,.09);box-shadow:inset 0 1px 1px var(--p-rim),0 2px 6px rgba(0,0,0,.4)}
+.nimbus-auth[data-tone="aurora"] .la-tab[data-active="true"],.nimbus-auth[data-tone="sunset"] .la-tab[data-active="true"],.nimbus-auth[data-tone="rose"] .la-tab[data-active="true"],.nimbus-auth[data-tone="emerald"] .la-tab[data-active="true"]{
+  background:rgba(255,255,255,.1);box-shadow:inset 0 1px 1px var(--p-rim),0 2px 6px rgba(0,0,0,.25)}
 .la-tab:focus-visible{outline:2px solid var(--p-accent);outline-offset:-1px}
 
-/* OAuth grid */
+/* OAuth grid - Tidepool Glass Tiles */
 .la-oauth{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
-.la-oauth-btn{width:100%!important;height:40px!important;font-size:12.5px!important}
+.la-oauth-btn{
+  width:100%!important;height:42px!important;border-radius:14px!important;
+  font-size:12.5px!important;font-weight:600!important;
+  background:rgba(255,255,255,.16)!important;
+  box-shadow:inset 0 1px 1px var(--p-rim),inset 0 0 0 1px var(--p-line),0 2px 6px rgba(0,35,80,.06)!important;
+  transition:transform .2s cubic-bezier(.34,1.56,.64,1),background-color .25s,box-shadow .25s!important;
+}
+.la-oauth-btn:hover:not(:disabled){
+  transform:translateY(-1px)!important;
+  background:rgba(255,255,255,.26)!important;
+  box-shadow:inset 0 1px 1px var(--p-rim),inset 0 0 0 1px var(--p-line),0 6px 14px rgba(0,35,80,.12)!important;
+}
+.la-oauth-btn:active:not(:disabled){transform:translateY(0) scale(.98)!important}
+
+.nimbus-auth[data-tone="dark"] .la-oauth-btn,.nimbus-auth[data-tone="midnight"] .la-oauth-btn{
+  background:rgba(255,255,255,.05)!important;
+  box-shadow:inset 0 1px 1px var(--p-rim),inset 0 0 0 1px var(--p-line),0 2px 8px rgba(0,0,0,.35)!important;
+}
+.nimbus-auth[data-tone="dark"] .la-oauth-btn:hover:not(:disabled),.nimbus-auth[data-tone="midnight"] .la-oauth-btn:hover:not(:disabled){
+  background:rgba(255,255,255,.11)!important;
+  box-shadow:inset 0 1px 1px var(--p-rim),inset 0 0 0 1px var(--p-line),0 6px 16px rgba(0,0,0,.5)!important;
+}
+
+.nimbus-auth[data-tone="aurora"] .la-oauth-btn,.nimbus-auth[data-tone="sunset"] .la-oauth-btn,.nimbus-auth[data-tone="rose"] .la-oauth-btn,.nimbus-auth[data-tone="emerald"] .la-oauth-btn{
+  background:rgba(255,255,255,.06)!important;
+  box-shadow:inset 0 1px 1px var(--p-rim),inset 0 0 0 1px var(--p-line),0 2px 8px rgba(0,0,0,.25)!important;
+}
+.nimbus-auth[data-tone="aurora"] .la-oauth-btn:hover:not(:disabled),.nimbus-auth[data-tone="sunset"] .la-oauth-btn:hover:not(:disabled),.nimbus-auth[data-tone="rose"] .la-oauth-btn:hover:not(:disabled),.nimbus-auth[data-tone="emerald"] .la-oauth-btn:hover:not(:disabled){
+  background:rgba(255,255,255,.13)!important;
+  box-shadow:inset 0 1px 1px var(--p-rim),inset 0 0 0 1px var(--p-line),0 6px 16px rgba(0,0,0,.35)!important;
+}
 
 /* Divider with LiquidSeparator */
 .la-div{position:relative;display:flex;align-items:center;justify-content:center;margin:16px 0}
@@ -554,8 +589,86 @@ const LA_CSS = `
 /* Error banner */
 .la-err{min-height:16px;font-size:12px;color:var(--p-err);margin-top:2px}
 
-/* Submit Button */
-.la-submit-btn{width:100%!important;margin-top:8px!important}
+/* Submit Button - Tidepool Checkout Capsule */
+.la-submit-btn{
+  width:100%!important;height:52px!important;margin-top:8px!important;border-radius:999px!important;
+  font-size:16px!important;font-weight:620!important;letter-spacing:-.01em!important;
+  color:var(--p-fg)!important;background-color:rgba(255,255,255,.2)!important;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.9),inset 0 0 0 1px rgba(255,255,255,.5),inset 0 -2px 6px rgba(0,162,255,.14),0 8px 20px -10px rgba(0,70,140,.45)!important;
+  transition:color .35s,background-color .45s,box-shadow .45s,transform .2s cubic-bezier(.34,1.56,.64,1)!important;
+}
+.la-submit-btn:hover:not(:disabled){
+  background-color:rgba(255,255,255,.3)!important;transform:translateY(-1px)!important;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,1),inset 0 0 0 1px rgba(255,255,255,.6),0 12px 24px -10px rgba(0,70,140,.5)!important;
+}
+.la-submit-btn:active:not(:disabled){transform:translateY(0) scale(.98)!important}
+.la-submit-btn:focus-visible{outline:2px solid var(--p-accent)!important;outline-offset:3px!important}
+
+/* Atmospheric tone variants for submit button */
+.nimbus-auth[data-tone="dark"] .la-submit-btn{
+  color:#F1F7FF!important;background-color:rgba(255,255,255,.07)!important;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.35),inset 0 0 0 1px rgba(255,255,255,.14),0 8px 20px -10px rgba(0,0,0,.6)!important;
+}
+.nimbus-auth[data-tone="dark"] .la-submit-btn:hover:not(:disabled){
+  background-color:rgba(255,255,255,.12)!important;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.22),0 12px 26px -8px rgba(0,0,0,.75)!important;
+}
+
+.nimbus-auth[data-tone="midnight"] .la-submit-btn{
+  color:#FFFFFF!important;background-color:rgba(0,229,255,.09)!important;
+  box-shadow:inset 0 1px 1px rgba(0,229,255,.65),inset 0 0 0 1px rgba(0,229,255,.25),0 8px 24px -8px rgba(0,229,255,.35)!important;
+}
+.nimbus-auth[data-tone="midnight"] .la-submit-btn:hover:not(:disabled){
+  background-color:rgba(0,229,255,.16)!important;
+  box-shadow:inset 0 1px 1px rgba(0,229,255,.85),inset 0 0 0 1px rgba(0,229,255,.38),0 12px 28px -6px rgba(0,229,255,.45)!important;
+}
+
+.nimbus-auth[data-tone="aurora"] .la-submit-btn{
+  color:#F0FDF4!important;background-color:rgba(52,211,153,.1)!important;
+  box-shadow:inset 0 1px 1px rgba(52,211,153,.7),inset 0 0 0 1px rgba(52,211,153,.26),0 8px 24px -8px rgba(16,185,129,.38)!important;
+}
+.nimbus-auth[data-tone="aurora"] .la-submit-btn:hover:not(:disabled){
+  background-color:rgba(52,211,153,.18)!important;
+  box-shadow:inset 0 1px 1px rgba(52,211,153,.9),inset 0 0 0 1px rgba(52,211,153,.4),0 12px 28px -6px rgba(16,185,129,.48)!important;
+}
+
+.nimbus-auth[data-tone="sunset"] .la-submit-btn{
+  color:#FFFBEB!important;background-color:rgba(251,191,36,.12)!important;
+  box-shadow:inset 0 1px 1px rgba(251,191,36,.75),inset 0 0 0 1px rgba(251,191,36,.28),0 8px 24px -8px rgba(245,158,11,.38)!important;
+}
+.nimbus-auth[data-tone="sunset"] .la-submit-btn:hover:not(:disabled){
+  background-color:rgba(251,191,36,.2)!important;
+  box-shadow:inset 0 1px 1px rgba(251,191,36,.95),inset 0 0 0 1px rgba(251,191,36,.42),0 12px 28px -6px rgba(245,158,11,.48)!important;
+}
+
+.nimbus-auth[data-tone="rose"] .la-submit-btn{
+  color:#FFF1F2!important;background-color:rgba(244,63,94,.12)!important;
+  box-shadow:inset 0 1px 1px rgba(244,63,94,.72),inset 0 0 0 1px rgba(244,63,94,.28),0 8px 24px -8px rgba(244,63,94,.38)!important;
+}
+.nimbus-auth[data-tone="rose"] .la-submit-btn:hover:not(:disabled){
+  background-color:rgba(244,63,94,.2)!important;
+  box-shadow:inset 0 1px 1px rgba(244,63,94,.92),inset 0 0 0 1px rgba(244,63,94,.42),0 12px 28px -6px rgba(244,63,94,.48)!important;
+}
+
+.nimbus-auth[data-tone="emerald"] .la-submit-btn{
+  color:#ECFDF5!important;background-color:rgba(16,185,129,.12)!important;
+  box-shadow:inset 0 1px 1px rgba(16,185,129,.75),inset 0 0 0 1px rgba(16,185,129,.28),0 8px 24px -8px rgba(6,78,59,.45)!important;
+}
+.nimbus-auth[data-tone="emerald"] .la-submit-btn:hover:not(:disabled){
+  background-color:rgba(16,185,129,.2)!important;
+  box-shadow:inset 0 1px 1px rgba(16,185,129,.95),inset 0 0 0 1px rgba(16,185,129,.42),0 12px 28px -6px rgba(6,78,59,.55)!important;
+}
+
+.la-submit-btn[data-phase="processing"],.la-submit-btn[data-phase="success"]{color:#fff!important;cursor:default!important}
+.nimbus-auth .la-submit-btn[data-phase="success"]{background-color:transparent!important;box-shadow:none!important}
+
+.la-check{stroke-dasharray:24;stroke-dashoffset:24;animation:laDraw .5s .25s cubic-bezier(.3,0,.2,1) forwards}
+@keyframes laDraw{to{stroke-dashoffset:0}}
+.la-dots{display:inline-flex;gap:3px}
+.la-dots i{width:4px;height:4px;border-radius:50%;background:currentColor;animation:laDot 1s infinite}
+.la-dots i:nth-child(2){animation-delay:.15s}
+.la-dots i:nth-child(3){animation-delay:.3s}
+@keyframes laDot{0%,100%{opacity:.35;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
 
 /* Footer */
 .la-foot{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:16px;font-size:12px;color:var(--p-faint)}
@@ -614,7 +727,25 @@ export function LiquidAuth({
   const frontRef = React.useRef<HTMLDivElement>(null)
   const backRef = React.useRef<HTMLDivElement>(null)
   const progRef = React.useRef({ p: 0, raf: 0 })
+  const audio = React.useRef<AudioContext | null>(null)
   const uid = React.useId().replace(/:/g, "")
+
+  const plip = (f0: number, f1: number) => {
+    if (!sound) return
+    try {
+      const AC = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext
+      const ctx = (audio.current ||= new AC())
+      const t = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain()
+      o.type = "sine"
+      o.frequency.setValueAtTime(f0, t)
+      o.frequency.exponentialRampToValueAtTime(f1, t + 0.08)
+      g.gain.setValueAtTime(0.0001, t)
+      g.gain.exponentialRampToValueAtTime(0.14, t + 0.008)
+      g.gain.exponentialRampToValueAtTime(0.0001, t + 0.18)
+      o.connect(g).connect(ctx.destination)
+      o.start(t); o.stop(t + 0.2)
+    } catch { /* optional */ }
+  }
 
   // Dynamic height of credentials container
   const [frontH, setFrontH] = React.useState<number | undefined>(undefined)
@@ -744,9 +875,10 @@ export function LiquidAuth({
     }
   }
 
-  // Handle submit
+  // Handle submit - with checkout button water fill & morphing behavior
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (phase === "processing" || phase === "success") return
     setServerError("")
     const newErr: Record<string, string> = {}
 
@@ -756,6 +888,7 @@ export function LiquidAuth({
       if (Object.keys(newErr).length > 0) {
         setErrors(newErr)
         water.shake()
+        plip(300, 220)
         return
       }
     } else {
@@ -767,13 +900,18 @@ export function LiquidAuth({
       if (Object.keys(newErr).length > 0) {
         setErrors(newErr)
         water.shake()
+        plip(300, 220)
         return
       }
     }
 
+    ;(document.activeElement as HTMLElement | null)?.blur?.()
+    progRef.current.p = 0
     setPhase("processing")
     water.setBlue(1)
-    runProgress(1, 950)
+    plip(420, 1300)
+    runProgress(0.88, 1200)
+    const started = performance.now()
 
     try {
       if (currentMode === "login") {
@@ -781,25 +919,35 @@ export function LiquidAuth({
       } else {
         await (onSignUp ? onSignUp({ name, email, password, agree }) : new Promise((r) => setTimeout(r, 1000)))
       }
-      setPhase("success")
-      const btn = payRef.current
-      if (btn && panelRef.current) {
-        const b = btn.getBoundingClientRect()
-        const pr = panelRef.current.getBoundingClientRect()
-        water.ripple(PAD + b.left - pr.left + b.width / 2, PAD + b.top - pr.top + b.height / 2, 1.2)
-      }
-      setTimeout(() => {
+      const wait = Math.max(0, 800 - (performance.now() - started))
+      await new Promise((r) => setTimeout(r, wait))
+
+      runProgress(1, 260, () => {
+        setPhase("success")
+        plip(660, 1760)
+        const btn = payRef.current
+        if (btn && panelRef.current) {
+          const b = btn.getBoundingClientRect()
+          const pr = panelRef.current.getBoundingClientRect()
+          water.ripple(PAD + b.left - pr.left + b.width / 2, PAD + b.top - pr.top + b.height / 2, 1.6)
+        }
+        try { navigator.vibrate?.(12) } catch { /* optional */ }
+        setTimeout(() => {
+          setPhase("edit")
+          water.setBlue(0)
+          progRef.current.p = 0
+          water.flow(100)
+        }, 2600)
+      })
+    } catch (err: unknown) {
+      runProgress(0, 400, () => {
         setPhase("edit")
         water.setBlue(0)
         progRef.current.p = 0
-        water.flow(100)
-      }, 2600)
-    } catch (err: unknown) {
-      setPhase("edit")
-      water.setBlue(0)
-      progRef.current.p = 0
-      water.shake()
-      setServerError(err instanceof Error ? err.message : "Something went wrong. Please try again.")
+        water.shake()
+        plip(300, 220)
+        setServerError(err instanceof Error ? err.message : "Something went wrong. Please try again.")
+      })
     }
   }
 
@@ -808,6 +956,35 @@ export function LiquidAuth({
   const componentTone = tone === "light" ? "light" : "dark"
   const checkboxTone: CheckboxTone =
     tone === "midnight" ? "midnight" : tone === "aurora" ? "aurora" : tone === "sunset" ? "sunset" : tone === "rose" ? "rose" : tone === "emerald" ? "emerald" : tone === "dark" ? "dark" : "light"
+
+  const renderSubmitButton = (label: string, ariaLabel: string, isCurrent: boolean) => (
+    <button
+      ref={isCurrent ? payRef : undefined}
+      type="submit"
+      className="la-submit-btn"
+      data-variant="checkout"
+      data-phase={phase}
+      data-tone={tone}
+      aria-busy={phase === "processing"}
+      aria-disabled={busy}
+      aria-label={ariaLabel}
+      disabled={busy}
+    >
+      {phase === "processing" ? (
+        <span className="la-submit-label">
+          Processing<span className="la-dots" aria-hidden="true"><i /><i /><i /></span>
+        </span>
+      ) : phase === "success" ? (
+        <span className="la-submit-label">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path className="la-check" d="m5.5 12.5 4.2 4.2L18.5 7.8" />
+          </svg>
+        </span>
+      ) : (
+        <span className="la-submit-label">{label}</span>
+      )}
+    </button>
+  )
 
   return (
     <div
@@ -988,24 +1165,7 @@ export function LiquidAuth({
 
                 {serverError && <div className="la-err" role="alert" style={{ textAlign: "center" }}>{serverError}</div>}
 
-                <LiquidButton
-                  ref={payRef}
-                  type="submit"
-                  variant="checkout"
-                  shape="pill"
-                  size="lg"
-                  tone={componentTone}
-                  sound={sound}
-                  disableWater={true}
-                  loading={phase === "processing"}
-                  loadingText="Processing"
-                  success={phase === "success"}
-                  aria-label="Sign in to your account"
-                  className="la-submit-btn"
-                  disabled={busy}
-                >
-                  Sign in
-                </LiquidButton>
+                {renderSubmitButton("Sign in", "Sign in to your account", currentMode === "login")}
               </form>
             </div>
 
@@ -1171,24 +1331,7 @@ export function LiquidAuth({
 
                 {serverError && <div className="la-err" role="alert" style={{ textAlign: "center" }}>{serverError}</div>}
 
-                <LiquidButton
-                  ref={payRef}
-                  type="submit"
-                  variant="checkout"
-                  shape="pill"
-                  size="lg"
-                  tone={componentTone}
-                  sound={sound}
-                  disableWater={true}
-                  loading={phase === "processing"}
-                  loadingText="Processing"
-                  success={phase === "success"}
-                  aria-label="Create your account"
-                  className="la-submit-btn"
-                  disabled={busy}
-                >
-                  Create account
-                </LiquidButton>
+                {renderSubmitButton("Create account", "Create your account", currentMode === "signup")}
               </form>
             </div>
           </div>
@@ -1210,5 +1353,5 @@ export function LiquidAuth({
   )
 }
 
-export { LiquidAuth as AuthCard }
+export { LiquidAuth as AuthCard, LiquidAuth as Component }
 export default LiquidAuth

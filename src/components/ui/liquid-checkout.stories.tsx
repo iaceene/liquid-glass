@@ -32,7 +32,7 @@ const DEMO_CARDS: LiquidWalletCard[] = [
 ];
 
 const meta: Meta<typeof LiquidCheckout> = {
-  title: 'Components/LiquidCheckout',
+  title: 'Application Flows/LiquidCheckout',
   component: LiquidCheckout,
   tags: ['autodocs'],
   argTypes: {

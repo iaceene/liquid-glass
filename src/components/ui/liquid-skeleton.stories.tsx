@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { LiquidSkeleton } from './liquid-skeleton';
 
 const meta: Meta<typeof LiquidSkeleton> = {
-  title: 'Components/LiquidSkeleton',
+  title: 'Data Display/LiquidSkeleton',
   component: LiquidSkeleton,
   tags: ['autodocs'],
   argTypes: {

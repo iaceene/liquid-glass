@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { LiquidBadge } from './liquid-badge';
 
 const meta: Meta<typeof LiquidBadge> = {
-  title: 'Components/LiquidBadge',
+  title: 'Data Display/LiquidBadge',
   component: LiquidBadge,
   tags: ['autodocs'],
   argTypes: {

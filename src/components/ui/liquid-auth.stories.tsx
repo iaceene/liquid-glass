@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { LiquidAuth } from "./liquid-auth"
 
 const meta: Meta<typeof LiquidAuth> = {
-  title: "Components/LiquidAuth",
+  title: 'Application Flows/LiquidAuth',
   component: LiquidAuth,
   parameters: {
     layout: "centered",
@@ -64,6 +64,48 @@ export const MidnightOnyx: Story = {
         onLogin={async (creds) => {
           await new Promise((r) => setTimeout(r, 1000))
           console.log("Midnight login:", creds)
+        }}
+      />
+    </div>
+  ),
+}
+
+export const AuroraEmerald: Story = {
+  render: () => (
+    <div style={{ padding: "48px 16px", minHeight: 600, display: "flex", alignItems: "center", justifyContent: "center", background: "#0A1612" }}>
+      <LiquidAuth
+        tone="aurora"
+        onLogin={async (creds) => {
+          await new Promise((r) => setTimeout(r, 1000))
+          console.log("Aurora login:", creds)
+        }}
+      />
+    </div>
+  ),
+}
+
+export const SunsetAmber: Story = {
+  render: () => (
+    <div style={{ padding: "48px 16px", minHeight: 600, display: "flex", alignItems: "center", justifyContent: "center", background: "#1C0D05" }}>
+      <LiquidAuth
+        tone="sunset"
+        onLogin={async (creds) => {
+          await new Promise((r) => setTimeout(r, 1000))
+          console.log("Sunset login:", creds)
+        }}
+      />
+    </div>
+  ),
+}
+
+export const RoseBlush: Story = {
+  render: () => (
+    <div style={{ padding: "48px 16px", minHeight: 600, display: "flex", alignItems: "center", justifyContent: "center", background: "#1E0812" }}>
+      <LiquidAuth
+        tone="rose"
+        onLogin={async (creds) => {
+          await new Promise((r) => setTimeout(r, 1000))
+          console.log("Rose login:", creds)
         }}
       />
     </div>
