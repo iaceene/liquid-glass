@@ -1,4 +1,4 @@
-# @liquid-glass/ui · Nimbus UI
+# @iaceene/liquid-glass · Nimbus UI
 
 A modern, production-ready React component library crafted in the **Nimbus liquid-glass & Frutiger Aero water aesthetic**.
 
@@ -39,7 +39,7 @@ Frosted glass surfaces with physical backdrop blur, real-time WebGL water shader
 
 ### 1. Triggering Toasts Imperatively
 ```tsx
-import { LiquidToaster, toast, LiquidButton } from '@liquid-glass/ui';
+import { LiquidToaster, toast, LiquidButton } from '@iaceene/liquid-glass';
 
 export function ToastDemo() {
   return (
@@ -63,7 +63,7 @@ export function ToastDemo() {
 
 ### 2. Segmented Liquid Tabs with Icon Scenes
 ```tsx
-import { LiquidTabs, NimbusTabIcons } from '@liquid-glass/ui';
+import { LiquidTabs, NimbusTabIcons } from '@iaceene/liquid-glass';
 
 export function NavigationTabs() {
   return (
@@ -136,17 +136,17 @@ liquid-glass/
 
 ## Installation
 
-Install `@liquid-glass/ui` along with its peer dependencies:
+Install `@iaceene/liquid-glass` along with its peer dependencies:
 
 ```bash
 # Using Bun
-bun add @liquid-glass/ui react react-dom
+bun add @iaceene/liquid-glass react react-dom
 
 # Using npm
-npm install @liquid-glass/ui react react-dom
+npm install @iaceene/liquid-glass react react-dom
 
 # Using pnpm
-pnpm add @liquid-glass/ui react react-dom
+pnpm add @iaceene/liquid-glass react react-dom
 ```
 
 ---
@@ -158,13 +158,13 @@ pnpm add @liquid-glass/ui react react-dom
 Import the library CSS in your root file (e.g., `main.tsx` in Vite or `app/layout.tsx` in Next.js):
 
 ```tsx
-import '@liquid-glass/ui/styles.css';
+import '@iaceene/liquid-glass/styles.css';
 ```
 
 ### 2. Using Components
 
 ```tsx
-import { Button } from '@liquid-glass/ui';
+import { Button } from '@iaceene/liquid-glass';
 import { Mail } from 'lucide-react';
 
 export default function App() {
@@ -304,20 +304,20 @@ This produces:
 
 ### 1. Install the Package
 ```bash
-npm install @liquid-glass/ui
+npm install @iaceene/liquid-glass
 # or yarn / pnpm / bun
-pnpm add @liquid-glass/ui
+pnpm add @iaceene/liquid-glass
 ```
 
 ### 2. Import Stylesheet
 Import the CSS in your application entry file (e.g. `app/layout.tsx` for Next.js App Router, or `src/main.tsx` for Vite):
 ```tsx
-import '@liquid-glass/ui/styles.css';
+import '@iaceene/liquid-glass/styles.css';
 ```
 
 ### 3. Import and Use Components
 ```tsx
-import { LiquidButton, LiquidCard, LiquidToast, toast, LiquidToaster } from '@liquid-glass/ui';
+import { LiquidButton, LiquidCard, LiquidToast, toast, LiquidToaster } from '@iaceene/liquid-glass';
 
 export default function Page() {
   return (
@@ -349,7 +349,7 @@ export default function Page() {
    # or run the automated script:
    npm run release
    ```
-   *(Note: Scoped packages like `@liquid-glass/ui` or `@iaceene/liquid-glass` must use `--access public` unless on a paid npm organization).*
+   *(Note: Scoped packages like `@iaceene/liquid-glass` must use `--access public` unless on a paid npm organization).*
 
 ### Method 2: Automated via GitHub Actions
 A GitHub Actions workflow is set up at `.github/workflows/publish.yml`:

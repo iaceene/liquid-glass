@@ -1,5 +1,5 @@
 {
-  "name": "@liquid-glass/ui",
+  "name": "@iaceene/liquid-glass",
   "version": "0.1.0",
   "description": "A production-ready, reusable React UI component library inspired by shadcn/ui",
   "type": "module",

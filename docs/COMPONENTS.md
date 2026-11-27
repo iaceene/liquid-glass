@@ -74,7 +74,7 @@ Luminous floating notification banners with liquid entry/exit spring physics, cl
 #### Usage with `LiquidToaster` Viewport
 Place `<LiquidToaster />` once near the root of your application (or in layout):
 ```tsx
-import { LiquidToaster, toast } from "@liquid-glass/ui"
+import { LiquidToaster, toast } from "@iaceene/liquid-glass"
 
 export function App() {
   return (
@@ -114,7 +114,7 @@ export function App() {
 
 #### Individual Component Usage
 ```tsx
-import { LiquidToast } from "@liquid-glass/ui"
+import { LiquidToast } from "@iaceene/liquid-glass"
 
 <LiquidToast
   tone="midnight"
@@ -144,7 +144,7 @@ A liquid segmented navigation tray. The active tab drop stretches toward the sel
 
 #### Props-driven API
 ```tsx
-import { LiquidTabs, NimbusTabIcons } from "@liquid-glass/ui"
+import { LiquidTabs, NimbusTabIcons } from "@iaceene/liquid-glass"
 
 <LiquidTabs
   defaultValue="overview"
@@ -185,7 +185,7 @@ import {
   LiquidTabsTrigger,
   LiquidTabsContent,
   NimbusTabIcons,
-} from "@liquid-glass/ui"
+} from "@iaceene/liquid-glass"
 
 <LiquidTabs defaultValue="code" tone="dark">
   <LiquidTabsList>
@@ -221,7 +221,7 @@ import {
   LiquidDialogFooter,
   LiquidDialogClose,
   LiquidButton,
-} from "@liquid-glass/ui"
+} from "@iaceene/liquid-glass"
 
 <LiquidDialog>
   <LiquidDialogTrigger asChild>
@@ -259,7 +259,7 @@ import {
   LiquidDropdownMenuSeparator,
   LiquidDropdownMenuLabel,
   LiquidButton,
-} from "@liquid-glass/ui"
+} from "@iaceene/liquid-glass"
 
 <LiquidDropdownMenu>
   <LiquidDropdownMenuTrigger asChild>
@@ -281,7 +281,7 @@ import {
 Floating liquid glass dewdrop with directional pointer arrow (`top`, `bottom`, `left`, `right`), configurable hover/focus delay, Escape dismissal, and accessible `role="tooltip"`.
 
 ```tsx
-import { LiquidTooltip, LiquidButton } from "@liquid-glass/ui"
+import { LiquidTooltip, LiquidButton } from "@iaceene/liquid-glass"
 
 <LiquidTooltip content="Subsurface information" side="top">
   <LiquidButton variant="secondary">Hover me</LiquidButton>
@@ -300,7 +300,7 @@ import {
   LiquidPopoverContent,
   LiquidPopoverClose,
   LiquidButton,
-} from "@liquid-glass/ui"
+} from "@iaceene/liquid-glass"
 
 <LiquidPopover>
   <LiquidPopoverTrigger asChild>
@@ -322,7 +322,7 @@ import {
 Glass reservoir basin that fills with blue water and checkmark droplet upon check, Space key toggle, sound effects, hidden input for form submissions, and `role="checkbox"`.
 
 ```tsx
-import { LiquidCheckbox } from "@liquid-glass/ui"
+import { LiquidCheckbox } from "@iaceene/liquid-glass"
 
 <LiquidCheckbox
   defaultChecked
@@ -337,7 +337,7 @@ import { LiquidCheckbox } from "@liquid-glass/ui"
 A unified glass form panel embedded with responsive WebGL water. As the user tabs or clicks between fields, an active fluid drop glides seamlessly across inputs, stretching and pinching droplets on long hops. Includes live error shaking, progress submit with liquid water fill, checkmark completion, and synthesized droplet audio.
 
 ```tsx
-import { LiquidForm, type LiquidFormFieldConfig } from "@liquid-glass/ui"
+import { LiquidForm, type LiquidFormFieldConfig } from "@iaceene/liquid-glass"
 
 const fields: LiquidFormFieldConfig[] = [
   { name: "name", label: "Full Name", placeholder: "Alex Rivera", required: true, colSpan: 1 },
@@ -363,7 +363,7 @@ const fields: LiquidFormFieldConfig[] = [
 Glass callout banner with glowing beacon drop indicator, `AlertTitle`, `AlertDescription`, optional dismissal, and accessibility (`role="alert"`).
 
 ```tsx
-import { LiquidAlert } from "@liquid-glass/ui"
+import { LiquidAlert } from "@iaceene/liquid-glass"
 
 <LiquidAlert variant="info" title="Water Level Normal" dismissible>
   The reservoir maintains standard equilibrium.
@@ -378,7 +378,7 @@ A unified authentication card combining **Sign In** and **Sign Up** in a single 
 Supports `tone="light" | "dark" | "midnight" | "aurora" | "sunset" | "rose" | "emerald"`.
 
 ```tsx
-import { LiquidAuth } from "@liquid-glass/ui"
+import { LiquidAuth } from "@iaceene/liquid-glass"
 
 <LiquidAuth
   tone="midnight"
