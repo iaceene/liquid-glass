@@ -33,7 +33,17 @@ const PAD = 14
 
 export const CARD_PALETTES: Record<
   LiquidCardTheme,
-  { a: [number, number, number]; b: [number, number, number]; w: [number, number, number]; fg: string; soft: string; rim: string }
+  {
+    a: [number, number, number]
+    b: [number, number, number]
+    w: [number, number, number]
+    fg: string
+    soft: string
+    rim: string
+    accent: string
+    accentSoft: string
+    accentGlow: string
+  }
 > = {
   sky: {
     a: [0.2, 0.62, 1.0],
@@ -42,6 +52,9 @@ export const CARD_PALETTES: Record<
     fg: "#FFFFFF",
     soft: "rgba(255,255,255,.72)",
     rim: "rgba(255,255,255,.8)",
+    accent: "#00A2FF",
+    accentSoft: "rgba(0, 162, 255, 0.25)",
+    accentGlow: "rgba(0, 162, 255, 0.45)",
   },
   glass: {
     a: [0.93, 0.97, 1.0],
@@ -50,6 +63,9 @@ export const CARD_PALETTES: Record<
     fg: "#0B132B",
     soft: "rgba(11,19,43,.64)",
     rim: "rgba(255,255,255,.85)",
+    accent: "#00B4D8",
+    accentSoft: "rgba(0, 180, 216, 0.2)",
+    accentGlow: "rgba(0, 180, 216, 0.35)",
   },
   deep: {
     a: [0.09, 0.15, 0.32],
@@ -58,6 +74,9 @@ export const CARD_PALETTES: Record<
     fg: "#F1F7FF",
     soft: "rgba(241,247,255,.66)",
     rim: "rgba(255,255,255,.35)",
+    accent: "#00E5FF",
+    accentSoft: "rgba(0, 229, 255, 0.25)",
+    accentGlow: "rgba(0, 229, 255, 0.5)",
   },
   ruby: {
     a: [0.85, 0.22, 0.35],
@@ -66,6 +85,9 @@ export const CARD_PALETTES: Record<
     fg: "#FFFFFF",
     soft: "rgba(255,255,255,.74)",
     rim: "rgba(255,255,255,.85)",
+    accent: "#F43F5E",
+    accentSoft: "rgba(244, 63, 94, 0.25)",
+    accentGlow: "rgba(244, 63, 94, 0.45)",
   },
 }
 
@@ -100,6 +122,67 @@ const NC_CARD_CSS = `
 /* Water canvas */
 .nc-water{position:absolute;left:-14px;top:-14px;z-index:-1;pointer-events:none}
 .nimbus-card-scene[data-gl="off"] .nc-water{display:none}
+
+/* Liquid animated border — constrained strictly to the border perimeter */
+.nc-liquid-border {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  overflow: hidden;
+}
+
+.nc-border-stream {
+  position: absolute;
+  inset: -60%;
+  width: 220%;
+  height: 220%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 45deg,
+    var(--c-accent-soft, rgba(0, 162, 255, 0.2)) 95deg,
+    var(--c-accent, #00A2FF) 150deg,
+    #FFFFFF 176deg,
+    #FFFFFF 184deg,
+    var(--c-accent, #00A2FF) 210deg,
+    var(--c-accent-soft, rgba(0, 162, 255, 0.2)) 265deg,
+    transparent 315deg,
+    transparent 360deg
+  );
+  animation: ncBorderSpin 4s linear infinite;
+}
+
+.nimbus-card:hover .nc-border-stream {
+  animation-duration: 2.2s;
+}
+
+@keyframes ncBorderSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.nc-border-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: -1;
+  box-shadow: 0 0 18px -2px var(--c-accent-glow, rgba(0, 162, 255, 0.35));
+  opacity: 0.75;
+  animation: ncBorderPulse 3.2s ease-in-out infinite alternate;
+}
+
+@keyframes ncBorderPulse {
+  0% { opacity: 0.55; box-shadow: 0 0 12px -2px var(--c-accent-glow, rgba(0, 162, 255, 0.25)); }
+  100% { opacity: 0.95; box-shadow: 0 0 22px 0px var(--c-accent-glow, rgba(0, 162, 255, 0.5)); }
+}
 
 /* Fallback CSS Panel */
 .nc-fallback{
@@ -146,7 +229,7 @@ void main(){
  col=mix(col,mix(col,wc,.74),under);
  col+=vec3(1.)*(exp(-pow(sd+1.,2.)/2.)*.75+exp(-pow(sd-3.5,2.)/12.)*.14);
  float ang=dot(uv-.5,normalize(vec2(1.,.55)))+uTilt.x*.32-uTilt.y*.22;
- vec3 irid=.5+.5*cos(6.2831*(vec3(0.,.33,.67)+ang*1.7+uTime*.03));
+ vec3 irid=.5+.5*cos(6.2831*(vec3(0.,.33,.67)+fresnel:0.+ang*1.7+uTime*.03));
  float sheen=exp(-pow((ang-.06)/.07,2.))*.2+exp(-pow((ang+.3)/.025,2.))*.1;
  col+=mix(vec3(1.),irid,.5)*sheen;
  float rim=smoothstep(-7.,0.,d);
@@ -409,6 +492,9 @@ export const LiquidCard = React.forwardRef<HTMLDivElement, LiquidCardProps>(
               "--c-fg": palette.fg,
               "--c-soft": palette.soft,
               "--c-rim": palette.rim,
+              "--c-accent": palette.accent,
+              "--c-accent-soft": palette.accentSoft,
+              "--c-accent-glow": palette.accentGlow,
               ...style,
             } as React.CSSProperties
           }
@@ -418,6 +504,10 @@ export const LiquidCard = React.forwardRef<HTMLDivElement, LiquidCardProps>(
           {...divProps}
         >
           <span className="nc-glass" aria-hidden="true" />
+          <div className="nc-liquid-border" aria-hidden="true">
+            <div className="nc-border-stream" />
+          </div>
+          <div className="nc-border-glow" aria-hidden="true" />
           {water && <canvas className="nc-water" ref={canvasRef} aria-hidden="true" />}
           <span className="nc-fallback" aria-hidden="true" />
           {children}

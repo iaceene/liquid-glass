@@ -300,6 +300,14 @@ export {
   Calendar,
   type LiquidCalendarProps,
 } from './liquid-calendar';
+export {
+  LiquidEditor,
+  Editor,
+  type EditorLanguage,
+  type EditorTone,
+  type EditorFile,
+  type LiquidEditorProps,
+} from './liquid-editor';
 
 /* =========================================================================
  * 8. Core Architecture & Visualization Primitives

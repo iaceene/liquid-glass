@@ -1,7 +1,7 @@
 import { create } from 'storybook/theming';
 
 export default create({
-  base: 'light',
+  base: 'dark',
   brandTitle: 'Liquid Glass · iaceene',
   brandUrl: 'https://github.com/iaceene',
   brandImage: './brand.svg',
