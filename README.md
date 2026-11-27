@@ -13,10 +13,11 @@ Frosted glass surfaces with physical backdrop blur, real-time WebGL water shader
 | Category | Components |
 |---|---|
 | **Forms & Inputs** | `LiquidButton`, `LiquidInput`, `LiquidTextarea`, `LiquidCheckbox`, `LiquidSwitch` (`LiquidToggle`), `LiquidLabel`, `LiquidForm` |
-| **Navigation** | `LiquidNavbar`, `LiquidTabs` |
+| **Navigation** | `LiquidNavbar`, `LiquidSidebar` (`Sidebar`), `LiquidBreadcrumb` (`Breadcrumb`), `LiquidPagination` (`Pagination`), `LiquidTabs` |
+| **Code & Editor** | `LiquidEditor` (`Editor` with syntax coloring, tabs, line numbers, typing audio, and liquid border) |
 | **Feedback & Status** | `LiquidToast` (`Toaster`, `toast()`), `LiquidAlert` |
-| **Overlays & Dialogs** | `LiquidDialog`, `LiquidDropdownMenu`, `LiquidTooltip`, `LiquidPopover` |
-| **Data Display** | `LiquidCard`, `LiquidAccordion`, `LiquidBadge`, `LiquidAvatar`, `LiquidSeparator`, `LiquidSkeleton` |
+| **Overlays & Dialogs** | `LiquidDialog`, `LiquidCommandMenu` (`CommandMenu`), `LiquidDropdownMenu`, `LiquidTooltip`, `LiquidPopover` |
+| **Data & Display** | `LiquidCard`, `LiquidCalendar` (`Calendar`), `LiquidTable` (`Table`), `LiquidDataTable` (`DataTable`), `LiquidAccordion`, `LiquidBadge`, `LiquidAvatar`, `LiquidSeparator`, `LiquidSkeleton` |
 | **Application Flows** | `LiquidAuth` (`AuthCard`, Unified Sign In & Sign Up + OAuth), `LiquidCheckout` (`WaterCard`) |
 
 ---
@@ -289,13 +290,77 @@ bun run build-storybook
 ### 8. Build Component Library (Production)
 
 ```bash
-bun run build
+npm run build
 ```
 This produces:
 - `dist/index.js` (ES Module bundle)
 - `dist/index.cjs` (CommonJS bundle)
 - `dist/index.d.ts` (TypeScript declarations)
 - `dist/styles.css` (Tailwind CSS stylesheet)
+
+---
+
+## 📦 Using in Other Projects
+
+### 1. Install the Package
+```bash
+npm install @liquid-glass/ui
+# or yarn / pnpm / bun
+pnpm add @liquid-glass/ui
+```
+
+### 2. Import Stylesheet
+Import the CSS in your application entry file (e.g. `app/layout.tsx` for Next.js App Router, or `src/main.tsx` for Vite):
+```tsx
+import '@liquid-glass/ui/styles.css';
+```
+
+### 3. Import and Use Components
+```tsx
+import { LiquidButton, LiquidCard, LiquidToast, toast, LiquidToaster } from '@liquid-glass/ui';
+
+export default function Page() {
+  return (
+    <div className="p-8">
+      <LiquidCard theme="sky">
+        <h2>Liquid Glass Dashboard</h2>
+        <LiquidButton onClick={() => toast.success("Connected!")}>
+          Click Me
+        </LiquidButton>
+      </LiquidCard>
+      <LiquidToaster position="bottom-right" />
+    </div>
+  );
+}
+```
+
+---
+
+## 🚀 How to Publish to npm
+
+### Method 1: Local Terminal Publish (One-Click)
+1. **Login to your npm account**:
+   ```bash
+   npm login
+   ```
+2. **Publish the package publicly**:
+   ```bash
+   npm publish --access public
+   # or run the automated script:
+   npm run release
+   ```
+   *(Note: Scoped packages like `@liquid-glass/ui` or `@iaceene/liquid-glass` must use `--access public` unless on a paid npm organization).*
+
+### Method 2: Automated via GitHub Actions
+A GitHub Actions workflow is set up at `.github/workflows/publish.yml`:
+1. Generate an npm automation access token at [npmjs.com/settings/tokens](https://www.npmjs.com/settings/tokens).
+2. Add it as a secret in your GitHub repository:
+   - Go to **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
+   - Name: `NPM_TOKEN`
+   - Value: `<your npm token>`
+3. To trigger a release:
+   - Either create a new Release on GitHub, OR
+   - Go to **Actions** → **Publish Package to npm** → Click **Run workflow**.
 
 ---
 

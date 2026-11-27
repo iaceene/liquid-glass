@@ -17,6 +17,7 @@ const config: StorybookConfig = {
   },
 
   async viteFinal(config) {
+    config.base = './';
     if (config.resolve) {
       config.resolve.alias = {
         ...config.resolve.alias,

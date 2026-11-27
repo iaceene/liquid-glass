@@ -21,9 +21,37 @@
   "sideEffects": [
     "**/*.css"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iaceene/liquid-glass.git"
+  },
+  "homepage": "https://iaceene.github.io/liquid-glass/",
+  "bugs": {
+    "url": "https://github.com/iaceene/liquid-glass/issues"
+  },
+  "author": "iaceene <https://github.com/iaceene>",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "react-component",
+    "ui",
+    "components",
+    "liquid-glass",
+    "frutiger-aero",
+    "glassmorphism",
+    "webgl",
+    "shadcn",
+    "tailwind",
+    "tailwindcss"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build",
+    "release": "npm run build && npm publish --access public",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src --ext .ts,.tsx",
     "test": "vitest run",
