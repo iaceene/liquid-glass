@@ -1,12 +1,24 @@
-name: Publish Package to npm
+name: Release & Publish Package
 
 on:
   release:
     types: [published]
   workflow_dispatch:
+    inputs:
+      publish_npm:
+        description: 'Publish to npmjs.org'
+        required: true
+        type: boolean
+        default: true
+      publish_github:
+        description: 'Publish to GitHub Packages'
+        required: true
+        type: boolean
+        default: true
 
 permissions:
-  contents: read
+  contents: write
+  packages: write
   id-token: write
 
 jobs:
@@ -20,7 +32,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
@@ -31,10 +42,36 @@ jobs:
       - name: Run unit tests
         run: npm test
 
-      - name: Build distribution
+      - name: Build library distribution
         run: npm run build
 
-      - name: Publish to npm
+      - name: Create package tarball
+        run: npm pack
+
+      - name: Publish to GitHub Packages
+        if: ${{ github.event_name == 'release' || inputs.publish_github != false }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
+          npm publish --registry=https://npm.pkg.github.com
+        continue-on-error: true
+
+      - name: Publish to npm (registry.npmjs.org)
+        if: ${{ github.event_name == 'release' || inputs.publish_npm != false }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --access public
+        run: |
+          if [ -z "$NODE_AUTH_TOKEN" ]; then
+            echo "::warning ::NPM_TOKEN secret is not set. Skipping npmjs.org publish."
+          else
+            echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
+            npm publish --access public --registry=https://registry.npmjs.org
+          fi
+
+      - name: Attach tarball to GitHub Release
+        if: ${{ github.event_name == 'release' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload ${{ github.event.release.tag_name }} *.tgz --clobber

@@ -336,31 +336,53 @@ export default function Page() {
 
 ---
 
-## 🚀 How to Publish to npm
+## 🚀 Release & Publishing (GitHub Packages & npm)
 
-### Method 1: Local Terminal Publish (One-Click)
-1. **Login to your npm account**:
-   ```bash
-   npm login
-   ```
-2. **Publish the package publicly**:
-   ```bash
-   npm publish --access public
-   # or run the automated script:
-   npm run release
-   ```
-   *(Note: Scoped packages like `@iaceene/liquid-glass` must use `--access public` unless on a paid npm organization).*
+This repository includes a dual release workflow [`.github/workflows/publish.yml`](.github/workflows/publish.yml) that can publish to **GitHub Packages**, **npm (registry.npmjs.org)**, and attach the distribution tarball (`.tgz`) to your **GitHub Release**.
 
-### Method 2: Automated via GitHub Actions
-A GitHub Actions workflow is set up at `.github/workflows/publish.yml`:
-1. Generate an npm automation access token at [npmjs.com/settings/tokens](https://www.npmjs.com/settings/tokens).
-2. Add it as a secret in your GitHub repository:
-   - Go to **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
-   - Name: `NPM_TOKEN`
-   - Value: `<your npm token>`
-3. To trigger a release:
-   - Either create a new Release on GitHub, OR
-   - Go to **Actions** → **Publish Package to npm** → Click **Run workflow**.
+### 1. Creating a GitHub Release (Automated)
+1. In your GitHub repository, navigate to **Releases** → **Draft a new release**.
+2. Create a new tag (e.g. `v0.1.0`) and title.
+3. Click **Publish release**.
+4. GitHub Actions will automatically:
+   - Run typechecking and all unit tests.
+   - Build the ESM/CJS bundles and declaration maps.
+   - Publish to **GitHub Packages** (`https://npm.pkg.github.com`) using the built-in `GITHUB_TOKEN`.
+   - Publish to **npm** (`https://registry.npmjs.org`) if `NPM_TOKEN` is configured.
+   - Upload the `.tgz` tarball directly to your GitHub Release page.
+
+### 2. Manual Workflow Dispatch
+You can also trigger publication manually without creating a release:
+1. Go to the **Actions** tab on GitHub.
+2. Select **Release & Publish Package** in the left sidebar.
+3. Click **Run workflow** and toggle whether to publish to npm, GitHub Packages, or both.
+
+### 3. Setting Up npmjs.org Token (Optional)
+To also publish to `npmjs.org` automatically:
+1. Generate an access token at [npmjs.com/settings/tokens](https://www.npmjs.com/settings/tokens).
+2. In your GitHub repo, go to **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
+3. Name: `NPM_TOKEN`
+4. Value: `<your-npm-token>`
+
+---
+
+## 📥 Installing from GitHub Packages vs. npm
+
+### From npm (Default)
+```bash
+npm install @iaceene/liquid-glass
+```
+
+### From GitHub Packages
+To install `@iaceene/liquid-glass` from GitHub Packages in an external project:
+1. Create or edit `.npmrc` in your project root:
+   ```shell
+   @iaceene:registry=https://npm.pkg.github.com
+   ```
+2. Install the package:
+   ```bash
+   npm install @iaceene/liquid-glass
+   ```
 
 ---
 
