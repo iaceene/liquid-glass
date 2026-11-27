@@ -249,7 +249,60 @@ export {
 } from './liquid-checkout';
 
 /* =========================================================================
- * 7. Core Architecture & Visualization Primitives
+ * 7. Extended Components (Sidebar, Breadcrumb, Pagination, Table, DataTable, CommandMenu, Calendar)
+ * ========================================================================= */
+export {
+  LiquidSidebar,
+  Sidebar,
+  type LiquidSidebarItem,
+  type LiquidSidebarGroup,
+  type LiquidSidebarProps,
+} from './liquid-sidebar';
+export {
+  LiquidBreadcrumb,
+  Breadcrumb,
+  type LiquidBreadcrumbItem,
+  type LiquidBreadcrumbProps,
+} from './liquid-breadcrumb';
+export {
+  LiquidPagination,
+  Pagination,
+  type LiquidPaginationProps,
+} from './liquid-pagination';
+export {
+  LiquidTable,
+  LiquidTableHeader,
+  LiquidTableBody,
+  LiquidTableRow,
+  LiquidTableHead,
+  LiquidTableCell,
+  LiquidDataTable,
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHead,
+  TableCell,
+  DataTable,
+  type LiquidTableProps,
+  type DataTableColumn,
+  type LiquidDataTableProps,
+} from './liquid-table';
+export {
+  LiquidCommandMenu,
+  CommandMenu,
+  type CommandItem,
+  type CommandGroup,
+  type LiquidCommandMenuProps,
+} from './liquid-command-menu';
+export {
+  LiquidCalendar,
+  Calendar,
+  type LiquidCalendarProps,
+} from './liquid-calendar';
+
+/* =========================================================================
+ * 8. Core Architecture & Visualization Primitives
  * ========================================================================= */
 export * from './liquid';
 

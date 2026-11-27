@@ -57,17 +57,22 @@
     --liquid-radius-pill: 999px;
 
     --liquid-blur-sm: 10px;
-    --liquid-blur-md: 16px;
+    --liquid-blur-md: 18px;
     --liquid-blur-lg: 24px;
+    --liquid-blur: 18px;
+    --liquid-saturate: 180%;
+    --liquid-brightness: 1.08;
 
-    --liquid-text: #102039;
-    --liquid-text-muted: rgba(16, 32, 57, 0.68);
-    --liquid-tint: rgba(255, 255, 255, 0.16);
-    --liquid-rim: rgba(255, 255, 255, 0.62);
-    --liquid-border: rgba(255, 255, 255, 0.30);
-    --liquid-shadow: 0 14px 36px -18px rgba(0, 35, 80, 0.38);
-    --liquid-accent: #38bdf8;
-    --liquid-focus: #0284c7;
+    --liquid-text: #0B132B;
+    --liquid-text-muted: rgba(11, 19, 43, 0.68);
+    --liquid-tint: linear-gradient(135deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.08));
+    --liquid-rim: rgba(255, 255, 255, 0.6);
+    --liquid-rim-bottom: rgba(255, 255, 255, 0.15);
+    --liquid-border: rgba(255, 255, 255, 0.35);
+    --liquid-shadow: inset 0 1px 0 var(--liquid-rim), inset 0 -1px 0 var(--liquid-rim-bottom), 0 12px 40px rgba(31, 38, 135, 0.18);
+    --liquid-sheen: radial-gradient(100% 70% at 50% 0%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0) 65%);
+    --liquid-accent: #00A2FF;
+    --liquid-focus: #00A2FF;
   }
 
   .dark,
@@ -103,34 +108,53 @@
     --shadow-subtle: 0 1px 2px 0 rgb(0 0 0 / 0.3);
     --shadow-elevated: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
 
-    /* Liquid Glass Tokens (Dark) */
-    --liquid-text: #f3f8ff;
-    --liquid-text-muted: rgba(243, 248, 255, 0.68);
-    --liquid-tint: rgba(8, 18, 38, 0.34);
-    --liquid-rim: rgba(255, 255, 255, 0.30);
-    --liquid-border: rgba(255, 255, 255, 0.18);
-    --liquid-shadow: 0 16px 40px -18px rgba(0, 0, 0, 0.62);
-    --liquid-focus: #7dd3fc;
+    /* Liquid Glass Tokens (Dark / Midnight Abyss) */
+    --liquid-blur: 18px;
+    --liquid-saturate: 180%;
+    --liquid-brightness: 1.08;
+    --liquid-text: #F1F7FF;
+    --liquid-text-muted: rgba(241, 247, 255, 0.68);
+    --liquid-tint: linear-gradient(135deg, rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.25));
+    --liquid-rim: rgba(255, 255, 255, 0.4);
+    --liquid-rim-bottom: rgba(0, 210, 255, 0.2);
+    --liquid-border: rgba(255, 255, 255, 0.22);
+    --liquid-shadow: inset 0 1px 0 var(--liquid-rim), inset 0 -1px 0 var(--liquid-rim-bottom), 0 12px 40px rgba(0, 0, 0, 0.65), 0 0 20px rgba(0, 210, 255, 0.18);
+    --liquid-sheen: radial-gradient(100% 70% at 50% 0%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 65%);
+    --liquid-accent: #59DBFF;
+    --liquid-focus: #59DBFF;
   }
 
   [data-liquid-tone="light"] {
-    --liquid-text: #102039;
-    --liquid-text-muted: rgba(16, 32, 57, 0.68);
-    --liquid-tint: rgba(255, 255, 255, 0.16);
-    --liquid-rim: rgba(255, 255, 255, 0.62);
-    --liquid-border: rgba(255, 255, 255, 0.30);
-    --liquid-shadow: 0 14px 36px -18px rgba(0, 35, 80, 0.38);
-    --liquid-focus: #0284c7;
+    --liquid-blur: 18px;
+    --liquid-saturate: 180%;
+    --liquid-brightness: 1.08;
+    --liquid-text: #0B132B;
+    --liquid-text-muted: rgba(11, 19, 43, 0.68);
+    --liquid-tint: linear-gradient(135deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.08));
+    --liquid-rim: rgba(255, 255, 255, 0.6);
+    --liquid-rim-bottom: rgba(255, 255, 255, 0.15);
+    --liquid-border: rgba(255, 255, 255, 0.35);
+    --liquid-shadow: inset 0 1px 0 var(--liquid-rim), inset 0 -1px 0 var(--liquid-rim-bottom), 0 12px 40px rgba(31, 38, 135, 0.18);
+    --liquid-sheen: radial-gradient(100% 70% at 50% 0%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0) 65%);
+    --liquid-accent: #00A2FF;
+    --liquid-focus: #00A2FF;
   }
 
-  [data-liquid-tone="dark"] {
-    --liquid-text: #f3f8ff;
-    --liquid-text-muted: rgba(243, 248, 255, 0.68);
-    --liquid-tint: rgba(8, 18, 38, 0.34);
-    --liquid-rim: rgba(255, 255, 255, 0.30);
-    --liquid-border: rgba(255, 255, 255, 0.18);
-    --liquid-shadow: 0 16px 40px -18px rgba(0, 0, 0, 0.62);
-    --liquid-focus: #7dd3fc;
+  [data-liquid-tone="dark"],
+  [data-liquid-tone="midnight"] {
+    --liquid-blur: 18px;
+    --liquid-saturate: 180%;
+    --liquid-brightness: 1.08;
+    --liquid-text: #F1F7FF;
+    --liquid-text-muted: rgba(241, 247, 255, 0.68);
+    --liquid-tint: linear-gradient(135deg, rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.25));
+    --liquid-rim: rgba(255, 255, 255, 0.4);
+    --liquid-rim-bottom: rgba(0, 210, 255, 0.2);
+    --liquid-border: rgba(255, 255, 255, 0.22);
+    --liquid-shadow: inset 0 1px 0 var(--liquid-rim), inset 0 -1px 0 var(--liquid-rim-bottom), 0 12px 40px rgba(0, 0, 0, 0.65), 0 0 20px rgba(0, 210, 255, 0.18);
+    --liquid-sheen: radial-gradient(100% 70% at 50% 0%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 65%);
+    --liquid-accent: #59DBFF;
+    --liquid-focus: #59DBFF;
   }
 
   * {
@@ -145,14 +169,23 @@
 
 @layer utilities {
   .liquid-surface {
+    position: relative;
     background: var(--liquid-tint);
-    -webkit-backdrop-filter: blur(var(--liquid-blur-md)) saturate(1.25);
-    backdrop-filter: blur(var(--liquid-blur-md)) saturate(1.25);
+    -webkit-backdrop-filter: blur(var(--liquid-blur)) saturate(var(--liquid-saturate)) brightness(var(--liquid-brightness));
+    backdrop-filter: blur(var(--liquid-blur)) saturate(var(--liquid-saturate)) brightness(var(--liquid-brightness));
     border: 1px solid var(--liquid-border);
-    box-shadow:
-      inset 0 1px 1px var(--liquid-rim),
-      inset 0 0 0 1px rgba(255, 255, 255, 0.08),
-      var(--liquid-shadow);
+    box-shadow: var(--liquid-shadow);
+    overflow: hidden;
+  }
+
+  .liquid-surface::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: var(--liquid-sheen);
+    z-index: 0;
   }
 }
 

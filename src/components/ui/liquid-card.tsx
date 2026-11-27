@@ -33,7 +33,17 @@ const PAD = 14
 
 export const CARD_PALETTES: Record<
   LiquidCardTheme,
-  { a: [number, number, number]; b: [number, number, number]; w: [number, number, number]; fg: string; soft: string; rim: string }
+  {
+    a: [number, number, number]
+    b: [number, number, number]
+    w: [number, number, number]
+    fg: string
+    soft: string
+    rim: string
+    accent: string
+    accentSoft: string
+    accentGlow: string
+  }
 > = {
   sky: {
     a: [0.2, 0.62, 1.0],
@@ -42,6 +52,9 @@ export const CARD_PALETTES: Record<
     fg: "#FFFFFF",
     soft: "rgba(255,255,255,.72)",
     rim: "rgba(255,255,255,.8)",
+    accent: "#00A2FF",
+    accentSoft: "rgba(0, 162, 255, 0.25)",
+    accentGlow: "rgba(0, 162, 255, 0.45)",
   },
   glass: {
     a: [0.93, 0.97, 1.0],
@@ -50,6 +63,9 @@ export const CARD_PALETTES: Record<
     fg: "#0B132B",
     soft: "rgba(11,19,43,.64)",
     rim: "rgba(255,255,255,.85)",
+    accent: "#00B4D8",
+    accentSoft: "rgba(0, 180, 216, 0.2)",
+    accentGlow: "rgba(0, 180, 216, 0.35)",
   },
   deep: {
     a: [0.09, 0.15, 0.32],
@@ -58,6 +74,9 @@ export const CARD_PALETTES: Record<
     fg: "#F1F7FF",
     soft: "rgba(241,247,255,.66)",
     rim: "rgba(255,255,255,.35)",
+    accent: "#00E5FF",
+    accentSoft: "rgba(0, 229, 255, 0.25)",
+    accentGlow: "rgba(0, 229, 255, 0.5)",
   },
   ruby: {
     a: [0.85, 0.22, 0.35],
@@ -66,6 +85,9 @@ export const CARD_PALETTES: Record<
     fg: "#FFFFFF",
     soft: "rgba(255,255,255,.74)",
     rim: "rgba(255,255,255,.85)",
+    accent: "#F43F5E",
+    accentSoft: "rgba(244, 63, 94, 0.25)",
+    accentGlow: "rgba(244, 63, 94, 0.45)",
   },
 }
 

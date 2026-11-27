@@ -3,13 +3,15 @@
 /**
  * Nimbus UI · Liquid Popover — "Tidal Pearl"
  * An anchored glass reservoir that surfaces floating content beside a trigger.
- * Features refraction sheen, directional pointer arrow, outside-click detection,
+ * Portalled directly into document.body with fixed viewport anchoring, boundary detection,
+ * specular sheen, directional pointer support, outside-click detection,
  * and smooth opening physics with full keyboard accessibility.
- * No dependencies besides React.
+ * No dependencies besides React and ReactDOM.
  * by guglielmogiannattasio.it
  */
 
 import * as React from "react"
+import * as ReactDOM from "react-dom"
 
 export type PopoverSide = "top" | "bottom" | "left" | "right"
 export type PopoverAlign = "start" | "center" | "end"
@@ -51,33 +53,105 @@ export type LiquidPopoverCloseProps = {
 
 /* ---------- styles ---------- */
 const NPO_CSS = `
-.nimbus-popover-anchor{position:relative;display:inline-block}
+.nimbus-popover-anchor{display:inline-block}
 
-.nimbus-popover{--po-tint:rgba(255,255,255,.24);--po-fg:#0B132B;--po-soft:rgba(11,19,43,.64);--po-rim:rgba(255,255,255,.8);--po-line:rgba(11,19,43,.1);
-  position:absolute;z-index:9990;box-sizing:border-box;width:280px;padding:16px;border-radius:20px;isolation:isolate;
-  font-family:ui-sans-serif,-apple-system,"SF Pro Text","Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased;
-  font-size:14px;color:var(--po-fg);line-height:1.45;outline:none;
-  animation:npoDropIn .22s cubic-bezier(.34,1.4,.64,1) both}
-.nimbus-popover[data-tone="dark"]{--po-tint:rgba(10,18,40,.4);--po-fg:#F1F7FF;--po-soft:rgba(241,247,255,.66);--po-rim:rgba(255,255,255,.32);--po-line:rgba(241,247,255,.12)}
-.nimbus-popover[data-tone="midnight"]{--po-tint:rgba(4,7,16,.68);--po-fg:#FFFFFF;--po-soft:rgba(255,255,255,.68);--po-rim:rgba(0,210,255,.5);--po-line:rgba(0,210,255,.15)}
-.nimbus-popover[data-tone="aurora"]{--po-tint:rgba(12,28,42,.62);--po-fg:#F0FDF4;--po-soft:rgba(240,253,244,.72);--po-rim:rgba(52,211,153,.58);--po-line:rgba(52,211,153,.15)}
-.nimbus-popover[data-tone="sunset"]{--po-tint:rgba(38,18,8,.6);--po-fg:#FFFBEB;--po-soft:rgba(254,243,199,.75);--po-rim:rgba(251,191,36,.55);--po-line:rgba(251,191,36,.15)}
-.nimbus-popover[data-tone="rose"]{--po-tint:rgba(40,12,28,.6);--po-fg:#FFF1F2;--po-soft:rgba(255,228,230,.75);--po-rim:rgba(244,63,94,.55);--po-line:rgba(244,63,94,.15)}
-.nimbus-popover[data-tone="emerald"]{--po-tint:rgba(6,32,24,.6);--po-fg:#ECFDF5;--po-soft:rgba(209,250,229,.75);--po-rim:rgba(16,185,129,.55);--po-line:rgba(16,185,129,.15)}
+.nimbus-popover{
+  --po-tint:linear-gradient(135deg, rgba(255,255,255,.28), rgba(255,255,255,.08));
+  --po-fg:#0B132B;
+  --po-soft:rgba(11,19,43,.68);
+  --po-rim:rgba(255,255,255,.6);
+  --po-rim-b:rgba(255,255,255,.15);
+  --po-border:rgba(255,255,255,.35);
+  --po-shadow:inset 0 1px 0 var(--po-rim), inset 0 -1px 0 var(--po-rim-b), 0 12px 40px rgba(31,38,135,.18);
+  position:fixed;
+  z-index:99999;
+  box-sizing:border-box;
+  width:280px;
+  padding:16px;
+  border-radius:20px;
+  isolation:isolate;
+  font-family:ui-sans-serif,-apple-system,"SF Pro Text","Segoe UI",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  font-size:14px;
+  color:var(--po-fg);
+  line-height:1.45;
+  outline:none;
+  animation:npoDropIn .22s cubic-bezier(.34,1.4,.64,1) both;
+}
 
-.npo-glass{position:absolute;inset:0;border-radius:inherit;z-index:-2;overflow:hidden;background:var(--po-tint);
-  -webkit-backdrop-filter:blur(16px) saturate(1.2) brightness(1.06);backdrop-filter:blur(16px) saturate(1.2) brightness(1.06);
-  box-shadow:inset 0 1px 1px var(--po-rim),inset 0 0 0 1px rgba(255,255,255,.22),0 20px 44px -14px rgba(0,40,90,.55),0 3px 8px rgba(0,40,90,.1)}
-.nimbus-popover[data-tone="dark"] .npo-glass{box-shadow:inset 0 1px 1px var(--po-rim),inset 0 0 0 1px rgba(255,255,255,.12),0 22px 50px -14px rgba(0,0,0,.8)}
-.nimbus-popover[data-tone="midnight"] .npo-glass{box-shadow:inset 0 1px 1px var(--po-rim),inset 0 0 0 1px rgba(0,210,255,.2),0 24px 54px -14px rgba(0,0,0,.92),0 0 14px rgba(0,210,255,.12)}
-.nimbus-popover[data-tone="aurora"] .npo-glass{box-shadow:inset 0 1px 1px var(--po-rim),inset 0 0 0 1px rgba(52,211,153,.2),0 22px 50px -14px rgba(0,0,0,.85)}
-.nimbus-popover[data-tone="sunset"] .npo-glass{box-shadow:inset 0 1px 1px var(--po-rim),inset 0 0 0 1px rgba(245,158,11,.2),0 22px 50px -14px rgba(0,0,0,.85)}
-.nimbus-popover[data-tone="rose"] .npo-glass{box-shadow:inset 0 1px 1px var(--po-rim),inset 0 0 0 1px rgba(244,63,94,.2),0 22px 50px -14px rgba(0,0,0,.85)}
-.nimbus-popover[data-tone="emerald"] .npo-glass{box-shadow:inset 0 1px 1px var(--po-rim),inset 0 0 0 1px rgba(16,185,129,.2),0 22px 50px -14px rgba(0,0,0,.85)}
+.nimbus-popover[data-tone="dark"],
+.nimbus-popover[data-tone="midnight"]{
+  --po-tint:linear-gradient(135deg, rgba(15,23,42,.45), rgba(15,23,42,.25));
+  --po-fg:#F1F7FF;
+  --po-soft:rgba(241,247,255,.68);
+  --po-rim:rgba(255,255,255,.4);
+  --po-rim-b:rgba(0,210,255,.2);
+  --po-border:rgba(255,255,255,.22);
+  --po-shadow:inset 0 1px 0 var(--po-rim), inset 0 -1px 0 var(--po-rim-b), 0 16px 44px rgba(0,0,0,.7), 0 0 20px rgba(0,210,255,.18);
+}
 
-.npo-sheen{position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;
-  background:radial-gradient(100% 70% at 50% 0%,rgba(255,255,255,.3),rgba(255,255,255,0) 65%)}
-.nimbus-popover[data-tone="dark"] .npo-sheen{background:radial-gradient(100% 70% at 50% 0%,rgba(255,255,255,.12),rgba(255,255,255,0) 65%)}
+.nimbus-popover[data-tone="aurora"]{
+  --po-tint:linear-gradient(135deg, rgba(12,28,42,.5), rgba(6,32,24,.3));
+  --po-fg:#F0FDF4;
+  --po-soft:rgba(240,253,244,.75);
+  --po-rim:rgba(52,211,153,.55);
+  --po-rim-b:rgba(52,211,153,.2);
+  --po-border:rgba(52,211,153,.3);
+  --po-shadow:inset 0 1px 0 var(--po-rim), inset 0 -1px 0 var(--po-rim-b), 0 16px 44px rgba(0,0,0,.7), 0 0 20px rgba(52,211,153,.18);
+}
+
+.nimbus-popover[data-tone="sunset"]{
+  --po-tint:linear-gradient(135deg, rgba(38,18,8,.5), rgba(30,10,12,.3));
+  --po-fg:#FFFBEB;
+  --po-soft:rgba(254,243,199,.78);
+  --po-rim:rgba(251,191,36,.55);
+  --po-rim-b:rgba(251,191,36,.2);
+  --po-border:rgba(251,191,36,.3);
+  --po-shadow:inset 0 1px 0 var(--po-rim), inset 0 -1px 0 var(--po-rim-b), 0 16px 44px rgba(0,0,0,.7), 0 0 20px rgba(251,191,36,.18);
+}
+
+.nimbus-popover[data-tone="rose"]{
+  --po-tint:linear-gradient(135deg, rgba(40,12,28,.5), rgba(28,8,20,.3));
+  --po-fg:#FFF1F2;
+  --po-soft:rgba(255,228,230,.78);
+  --po-rim:rgba(244,63,94,.55);
+  --po-rim-b:rgba(244,63,94,.2);
+  --po-border:rgba(244,63,94,.3);
+  --po-shadow:inset 0 1px 0 var(--po-rim), inset 0 -1px 0 var(--po-rim-b), 0 16px 44px rgba(0,0,0,.7), 0 0 20px rgba(244,63,94,.18);
+}
+
+.nimbus-popover[data-tone="emerald"]{
+  --po-tint:linear-gradient(135deg, rgba(6,32,24,.5), rgba(4,24,18,.3));
+  --po-fg:#ECFDF5;
+  --po-soft:rgba(209,250,229,.78);
+  --po-rim:rgba(16,185,129,.55);
+  --po-rim-b:rgba(16,185,129,.2);
+  --po-border:rgba(16,185,129,.3);
+  --po-shadow:inset 0 1px 0 var(--po-rim), inset 0 -1px 0 var(--po-rim-b), 0 16px 44px rgba(0,0,0,.7), 0 0 20px rgba(16,185,129,.18);
+}
+
+.npo-glass{
+  position:absolute;inset:0;border-radius:inherit;z-index:-2;overflow:hidden;
+  background:var(--po-tint);
+  -webkit-backdrop-filter:blur(18px) saturate(180%) brightness(1.08);
+  backdrop-filter:blur(18px) saturate(180%) brightness(1.08);
+  border:1px solid var(--po-border);
+  box-shadow:var(--po-shadow);
+}
+
+.npo-glass::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  background:radial-gradient(100% 70% at 50% 0%, rgba(255,255,255,.4), rgba(255,255,255,0) 65%);
+}
+
+.nimbus-popover[data-tone="dark"] .npo-glass::before,
+.nimbus-popover[data-tone="midnight"] .npo-glass::before{
+  background:radial-gradient(100% 70% at 50% 0%, rgba(255,255,255,.22), rgba(255,255,255,0) 65%);
+}
 
 @keyframes npoDropIn{from{opacity:0;transform:scale(.94) translateY(-4px)}to{opacity:1;transform:scale(1) translateY(0)}}
 
@@ -170,7 +244,7 @@ export const LiquidPopoverContent = React.forwardRef<HTMLDivElement, LiquidPopov
     children,
     side = "bottom",
     align = "center",
-    sideOffset = 8,
+    sideOffset = 12,
     className = "",
     style,
     onEscapeKeyDown,
@@ -181,11 +255,78 @@ export const LiquidPopoverContent = React.forwardRef<HTMLDivElement, LiquidPopov
 ) {
   const ctx = React.useContext(PopoverContext)
   const innerRef = React.useRef<HTMLDivElement | null>(null)
+  const [coords, setCoords] = React.useState<{ top: number; left: number } | null>(null)
+  const [mounted, setMounted] = React.useState(false)
 
   React.useImperativeHandle(forwardedRef, () => innerRef.current!)
   React.useEffect(() => {
     if (ctx) ctx.contentRef.current = innerRef.current
   })
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Calculate anchored fixed coordinates with viewport flipping
+  const updatePosition = React.useCallback(() => {
+    if (!ctx?.triggerRef.current) return
+    const triggerRect = ctx.triggerRef.current.getBoundingClientRect()
+    const contentWidth = innerRef.current ? innerRef.current.offsetWidth : 280
+    const contentHeight = innerRef.current ? innerRef.current.offsetHeight : 150
+    const gap = sideOffset ?? 12
+    const vw = window.innerWidth
+    const vh = window.innerHeight
+
+    let resolvedSide = side
+    // Flip side if leaving viewport
+    if (resolvedSide === "bottom" && triggerRect.bottom + gap + contentHeight > vh) {
+      if (triggerRect.top - gap - contentHeight >= 0) resolvedSide = "top"
+    } else if (resolvedSide === "top" && triggerRect.top - gap - contentHeight < 0) {
+      if (triggerRect.bottom + gap + contentHeight <= vh) resolvedSide = "bottom"
+    }
+
+    let top = 0
+    let left = 0
+
+    if (resolvedSide === "bottom") {
+      top = triggerRect.bottom + gap
+      if (align === "start") left = triggerRect.left
+      else if (align === "end") left = triggerRect.right - contentWidth
+      else left = triggerRect.left + (triggerRect.width - contentWidth) / 2
+    } else if (resolvedSide === "top") {
+      top = triggerRect.top - gap - contentHeight
+      if (align === "start") left = triggerRect.left
+      else if (align === "end") left = triggerRect.right - contentWidth
+      else left = triggerRect.left + (triggerRect.width - contentWidth) / 2
+    } else if (resolvedSide === "left") {
+      left = triggerRect.left - gap - contentWidth
+      if (align === "start") top = triggerRect.top
+      else if (align === "end") top = triggerRect.bottom - contentHeight
+      else top = triggerRect.top + (triggerRect.height - contentHeight) / 2
+    } else if (resolvedSide === "right") {
+      left = triggerRect.right + gap
+      if (align === "start") top = triggerRect.top
+      else if (align === "end") top = triggerRect.bottom - contentHeight
+      else top = triggerRect.top + (triggerRect.height - contentHeight) / 2
+    }
+
+    // Keep within viewport boundaries
+    left = Math.max(12, Math.min(vw - contentWidth - 12, left))
+    top = Math.max(12, Math.min(vh - contentHeight - 12, top))
+
+    setCoords({ top, left })
+  }, [align, ctx?.triggerRef, side, sideOffset])
+
+  React.useLayoutEffect(() => {
+    if (!ctx?.open) return
+    updatePosition()
+    window.addEventListener("resize", updatePosition)
+    window.addEventListener("scroll", updatePosition, true)
+    return () => {
+      window.removeEventListener("resize", updatePosition)
+      window.removeEventListener("scroll", updatePosition, true)
+    }
+  }, [ctx?.open, updatePosition])
 
   // Dismiss on click outside or Escape
   React.useEffect(() => {
@@ -218,39 +359,7 @@ export const LiquidPopoverContent = React.forwardRef<HTMLDivElement, LiquidPopov
 
   if (!ctx?.open) return null
 
-  // Positioning style
-  const placementStyle: React.CSSProperties = { ...style }
-  if (side === "bottom") {
-    placementStyle.top = `calc(100% + ${sideOffset}px)`
-    if (align === "center") {
-      placementStyle.left = "50%"
-      placementStyle.transform = "translateX(-50%)"
-    } else if (align === "start") {
-      placementStyle.left = "0"
-    } else {
-      placementStyle.right = "0"
-    }
-  } else if (side === "top") {
-    placementStyle.bottom = `calc(100% + ${sideOffset}px)`
-    if (align === "center") {
-      placementStyle.left = "50%"
-      placementStyle.transform = "translateX(-50%)"
-    } else if (align === "start") {
-      placementStyle.left = "0"
-    } else {
-      placementStyle.right = "0"
-    }
-  } else if (side === "left") {
-    placementStyle.right = `calc(100% + ${sideOffset}px)`
-    placementStyle.top = align === "center" ? "50%" : align === "start" ? "0" : "auto"
-    if (align === "center") placementStyle.transform = "translateY(-50%)"
-  } else if (side === "right") {
-    placementStyle.left = `calc(100% + ${sideOffset}px)`
-    placementStyle.top = align === "center" ? "50%" : align === "start" ? "0" : "auto"
-    if (align === "center") placementStyle.transform = "translateY(-50%)"
-  }
-
-  return (
+  const popoverElement = (
     <div
       ref={innerRef}
       role="dialog"
@@ -259,14 +368,22 @@ export const LiquidPopoverContent = React.forwardRef<HTMLDivElement, LiquidPopov
       data-align={align}
       data-tone={ctx.tone}
       className={`nimbus-popover ${className}`}
-      style={placementStyle}
+      style={{
+        ...style,
+        ...(coords ? { top: `${coords.top}px`, left: `${coords.left}px` } : { visibility: "hidden" as const }),
+      }}
       {...props}
     >
       <span className="npo-glass" aria-hidden="true" />
-      <span className="npo-sheen" aria-hidden="true" />
       {children}
     </div>
   )
+
+  if (mounted && typeof document !== "undefined") {
+    return ReactDOM.createPortal(popoverElement, document.body)
+  }
+
+  return popoverElement
 })
 
 export function LiquidPopoverClose({ children, asChild, className = "", style, ...props }: LiquidPopoverCloseProps) {

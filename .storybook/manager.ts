@@ -3,4 +3,8 @@ import theme from './theme';
 
 addons.setConfig({
   theme,
+  sidebar: {
+    showRoots: true,
+    collapsedRoots: [],
+  },
 });

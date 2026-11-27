@@ -171,13 +171,24 @@ const NB_CSS = `
 
 /* Glass panel */
 .nb-glass{
-  position:absolute;inset:0;border-radius:inherit;z-index:-2;overflow:hidden;background:var(--b-tint);
-  -webkit-backdrop-filter:blur(12px) saturate(1.2) brightness(1.06);backdrop-filter:blur(12px) saturate(1.2) brightness(1.06);
-  box-shadow:inset 0 1px 1px var(--b-rim),inset 0 0 0 1px rgba(255,255,255,.2),0 12px 28px -10px var(--b-shadow),0 2px 5px rgba(0,40,90,.08);
+  position:absolute;inset:0;border-radius:inherit;z-index:-2;overflow:hidden;
+  background:linear-gradient(135deg, rgba(255,255,255,.28), rgba(255,255,255,.08));
+  -webkit-backdrop-filter:blur(18px) saturate(180%) brightness(1.08);backdrop-filter:blur(18px) saturate(180%) brightness(1.08);
+  border:1px solid rgba(255,255,255,.35);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -1px 0 rgba(255,255,255,.15),0 12px 40px rgba(31,38,135,.18);
   pointer-events:none;
 }
+.nb-glass::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(100% 70% at 50% 0%, rgba(255,255,255,.45), rgba(255,255,255,0) 65%);
+}
 .nimbus-btn[data-tone="dark"] .nb-glass{
-  box-shadow:inset 0 1px 1px var(--b-rim),inset 0 0 0 1px rgba(255,255,255,.12),0 12px 28px -10px var(--b-shadow);
+  background:linear-gradient(135deg, rgba(15,23,42,.45), rgba(15,23,42,.25));
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(0,210,255,.2),0 12px 40px rgba(0,0,0,.65),0 0 20px rgba(0,210,255,.18);
+}
+.nimbus-btn[data-tone="dark"] .nb-glass::before{
+  background:radial-gradient(100% 70% at 50% 0%, rgba(255,255,255,.22), rgba(255,255,255,0) 65%);
 }
 
 /* Water WebGL Canvas */
